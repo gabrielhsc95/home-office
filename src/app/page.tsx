@@ -35,55 +35,57 @@ export default function Home() {
   };
 
   return (
-    <div className="flex h-screen bg-background text-foreground">
-      {/* Image Panel */}
-      <div className="relative w-2/3 p-4">
-        <Image
-          src="https://picsum.photos/id/1084/1200/800"
-          alt="Home Office Setup"
-          width={1200}
-          height={800}
-          className="rounded-lg object-cover"
-        />
-        {/* Hover areas */}
-        <div
-          className="absolute top-1/4 left-1/4 w-40 h-20 cursor-pointer"
-          onMouseEnter={() => handleEquipmentHover('monitor')}
-        />
-        <div
-          className="absolute bottom-1/4 left-1/4 w-40 h-20 cursor-pointer"
-          onMouseEnter={() => handleEquipmentHover('keyboard')}
-        />
-        <div
-          className="absolute top-1/2 right-1/4 w-40 h-20 cursor-pointer"
-          onMouseEnter={() => handleEquipmentHover('mouse')}
-        />
-        <div
-          className="absolute bottom-1/4 right-1/4 w-40 h-20 cursor-pointer"
-          onMouseEnter={() => handleEquipmentHover('speakers')}
-        />
-      </div>
+    <>
+      <div className="flex h-screen bg-background text-foreground">
+        {/* Image Panel */}
+        <div className="relative w-2/3 p-4">
+          <Image
+            src="https://picsum.photos/id/1084/1200/800"
+            alt="Home Office Setup"
+            width={1200}
+            height={800}
+            className="rounded-lg object-cover"
+          />
+          {/* Hover areas */}
+          <div
+            className="absolute top-1/4 left-1/4 w-40 h-20 cursor-pointer"
+            onMouseEnter={() => handleEquipmentHover('monitor')}
+          />
+          <div
+            className="absolute bottom-1/4 left-1/4 w-40 h-20 cursor-pointer"
+            onMouseEnter={() => handleEquipmentHover('keyboard')}
+          />
+          <div
+            className="absolute top-1/2 right-1/4 w-40 h-20 cursor-pointer"
+            onMouseEnter={() => handleEquipmentHover('mouse')}
+          />
+          <div
+            className="absolute bottom-1/4 right-1/4 w-40 h-20 cursor-pointer"
+            onMouseEnter={() => handleEquipmentHover('speakers')}
+          />
+        </div>
 
-      {/* Information Panel */}
-      <div className="w-1/3 p-4 border-l border-border">
-        {selectedEquipment ? (
-          <>
-            <div className="mb-4 flex items-center space-x-2">
-              {equipmentData[selectedEquipment].icon && (
-                <equipmentData[selectedEquipment].icon className="h-5 w-5 text-accent" />
-              )}
-              <h2 className="text-xl font-semibold">{equipmentData[selectedEquipment].name}</h2>
-            </div>
+        {/* Information Panel */}
+        <div className="w-1/3 p-4 border-l border-border">
+          {selectedEquipment ? (
+            <>
+              <div className="mb-4 flex items-center space-x-2">
+                {equipmentData[selectedEquipment].icon && (
+                  React.createElement(equipmentData[selectedEquipment].icon, { className: "h-5 w-5 text-accent" })
+                )}
+                <h2 className="text-xl font-semibold">{equipmentData[selectedEquipment].name}</h2>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                {equipmentData[selectedEquipment].description}
+              </p>
+            </>
+          ) : (
             <p className="text-sm text-muted-foreground">
-              {equipmentData[selectedEquipment].description}
+              Hover over a section in the image to see details.
             </p>
-          </>
-        ) : (
-          <p className="text-sm text-muted-foreground">
-            Hover over a section in the image to see details.
-          </p>
-        )}
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
