@@ -81,7 +81,7 @@ export default function Home() {
             </>
           ) : (
             <p className="text-sm text-muted-foreground">
-              Hover over a section in the image to see details.
+              Hover over an equipment area in the image to see details.
             </p>
           )}
         </div>
