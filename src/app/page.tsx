@@ -48,19 +48,19 @@ export default function Home() {
           />
           {/* Hover areas */}
           <div
-            className="absolute top-1/4 left-1/4 w-40 h-20 cursor-pointer"
+            className="absolute top-1/4 left-1/4 w-40 h-20 cursor-pointer hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 transition-shadow duration-200"
             onMouseEnter={() => handleEquipmentHover('monitor')}
           />
           <div
-            className="absolute bottom-1/4 left-1/4 w-40 h-20 cursor-pointer"
+            className="absolute bottom-1/4 left-1/4 w-40 h-20 cursor-pointer hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 transition-shadow duration-200"
             onMouseEnter={() => handleEquipmentHover('keyboard')}
           />
           <div
-            className="absolute top-1/2 right-1/4 w-40 h-20 cursor-pointer"
+            className="absolute top-1/2 right-1/4 w-40 h-20 cursor-pointer hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 transition-shadow duration-200"
             onMouseEnter={() => handleEquipmentHover('mouse')}
           />
           <div
-            className="absolute bottom-1/4 right-1/4 w-40 h-20 cursor-pointer"
+            className="absolute bottom-1/4 right-1/4 w-40 h-20 cursor-pointer hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 transition-shadow duration-200"
             onMouseEnter={() => handleEquipmentHover('speakers')}
           />
         </div>
