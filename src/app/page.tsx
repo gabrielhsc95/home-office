@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import React, { useState } from 'react';
-import { Monitor, Keyboard, Mouse, Speaker } from 'lucide-react';
+import { Monitor, Keyboard, Mouse, Speaker, Calendar } from 'lucide-react';
 
 const equipmentData = {
   monitor: {
@@ -30,6 +30,11 @@ const equipmentData = {
     description: 'High-quality studio speakers for clear audio.',
     icon: Speaker,
   },
+  calendar: {
+    name: 'Desk Calendar',
+    description: 'A calendar for schedules',
+    icon: Calendar,
+  },
 };
 
 export default function Home() {
@@ -53,7 +58,7 @@ export default function Home() {
           />
           {/* Hover areas */}
           <div
-            className={`absolute top-1/4 left-1/4 w-40 h-20 cursor-pointer transition-shadow duration-200 ring-1 ring-teal-500/40 hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 ${
+            className={`absolute top-1/4 left-1/4 w-40 h-20 cursor-pointer transition-shadow duration-200 ring-1 ring-teal-500/20 hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 ${
               selectedEquipment === 'monitor'
                 ? 'ring-2 ring-teal-500 ring-offset-2'
                 : ''
@@ -62,7 +67,7 @@ export default function Home() {
             onMouseLeave={() => setSelectedEquipment(null)}
           />
           <div
-            className={`absolute bottom-1/4 left-1/4 w-40 h-20 cursor-pointer transition-shadow duration-200 ring-1 ring-teal-500/40 hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 ${
+            className={`absolute bottom-1/4 left-1/4 w-40 h-20 cursor-pointer transition-shadow duration-200 ring-1 ring-teal-500/20 hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 ${
               selectedEquipment === 'keyboard'
                 ? 'ring-2 ring-teal-500 ring-offset-2'
                 : ''
@@ -71,7 +76,7 @@ export default function Home() {
             onMouseLeave={() => setSelectedEquipment(null)}
           />
           <div
-            className={`absolute top-1/2 right-1/4 w-40 h-20 cursor-pointer transition-shadow duration-200 ring-1 ring-teal-500/40 hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 ${
+            className={`absolute top-1/2 right-1/4 w-40 h-20 cursor-pointer transition-shadow duration-200 ring-1 ring-teal-500/20 hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 ${
               selectedEquipment === 'mouse'
                 ? 'ring-2 ring-teal-500 ring-offset-2'
                 : ''
@@ -80,7 +85,7 @@ export default function Home() {
             onMouseLeave={() => setSelectedEquipment(null)}
           />
            <div
-            className={`absolute top-1/2 left-1/4 w-40 h-20 cursor-pointer transition-shadow duration-200 ring-1 ring-teal-500/40 hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 ${
+            className={`absolute top-1/2 left-1/4 w-40 h-20 cursor-pointer transition-shadow duration-200 ring-1 ring-teal-500/20 hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 ${
               selectedEquipment === 'mousepad'
                 ? 'ring-2 ring-teal-500 ring-offset-2'
                 : ''
@@ -89,12 +94,21 @@ export default function Home() {
             onMouseLeave={() => setSelectedEquipment(null)}
           />
           <div
-            className={`absolute bottom-1/4 right-1/4 w-40 h-20 cursor-pointer transition-shadow duration-200 ring-1 ring-teal-500/40 hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 ${
+            className={`absolute bottom-1/4 right-1/4 w-40 h-20 cursor-pointer transition-shadow duration-200 ring-1 ring-teal-500/20 hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 ${
               selectedEquipment === 'speakers'
                 ? 'ring-2 ring-teal-500 ring-offset-2'
                 : ''
             }`}
             onMouseEnter={() => handleEquipmentHover('speakers')}
+            onMouseLeave={() => setSelectedEquipment(null)}
+          />
+           <div
+            className={`absolute top-1/4 right-1/4 w-40 h-20 cursor-pointer transition-shadow duration-200 ring-1 ring-teal-500/20 hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 ${
+              selectedEquipment === 'calendar'
+                ? 'ring-2 ring-teal-500 ring-offset-2'
+                : ''
+            }`}
+            onMouseEnter={() => handleEquipmentHover('calendar')}
             onMouseLeave={() => setSelectedEquipment(null)}
           />
         </div>
