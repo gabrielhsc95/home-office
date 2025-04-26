@@ -48,20 +48,24 @@ export default function Home() {
           />
           {/* Hover areas */}
           <div
-            className="absolute top-1/4 left-1/4 w-40 h-20 cursor-pointer hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 transition-shadow duration-200 ring-1 ring-teal-500/20"
+            className="absolute top-1/4 left-1/4 w-40 h-20 cursor-pointer hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 transition-shadow duration-200 ring-1 ring-teal-500/40"
             onMouseEnter={() => handleEquipmentHover('monitor')}
+            onMouseLeave={() => setSelectedEquipment(null)}
           />
           <div
-            className="absolute bottom-1/4 left-1/4 w-40 h-20 cursor-pointer hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 transition-shadow duration-200 ring-1 ring-teal-500/20"
+            className="absolute bottom-1/4 left-1/4 w-40 h-20 cursor-pointer hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 transition-shadow duration-200 ring-1 ring-teal-500/40"
             onMouseEnter={() => handleEquipmentHover('keyboard')}
+            onMouseLeave={() => setSelectedEquipment(null)}
           />
           <div
-            className="absolute top-1/2 right-1/4 w-40 h-20 cursor-pointer hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 transition-shadow duration-200 ring-1 ring-teal-500/20"
+            className="absolute top-1/2 right-1/4 w-40 h-20 cursor-pointer hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 transition-shadow duration-200 ring-1 ring-teal-500/40"
             onMouseEnter={() => handleEquipmentHover('mouse')}
+            onMouseLeave={() => setSelectedEquipment(null)}
           />
           <div
-            className="absolute bottom-1/4 right-1/4 w-40 h-20 cursor-pointer hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 transition-shadow duration-200 ring-1 ring-teal-500/20"
+            className="absolute bottom-1/4 right-1/4 w-40 h-20 cursor-pointer hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 transition-shadow duration-200 ring-1 ring-teal-500/40"
             onMouseEnter={() => handleEquipmentHover('speakers')}
+            onMouseLeave={() => setSelectedEquipment(null)}
           />
         </div>
 
