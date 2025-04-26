@@ -20,6 +20,11 @@ const equipmentData = {
     description: 'An ergonomic mouse designed for comfortable all-day use.',
     icon: Mouse,
   },
+  mousepad: {
+    name: 'Extended Mouse Pad',
+    description: 'A large surface mouse pad for smooth and precise mouse movements.',
+    icon: Mouse,
+  },
   speakers: {
     name: 'Studio Speakers',
     description: 'High-quality studio speakers for clear audio.',
@@ -48,37 +53,46 @@ export default function Home() {
           />
           {/* Hover areas */}
           <div
-            className={`absolute top-1/4 left-1/4 w-40 h-20 cursor-pointer transition-shadow duration-200 ring-1 ring-teal-500/40 ${
+            className={`absolute top-1/4 left-1/4 w-40 h-20 cursor-pointer transition-shadow duration-200 ring-1 ring-teal-500/40 hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 ${
               selectedEquipment === 'monitor'
                 ? 'ring-2 ring-teal-500 ring-offset-2'
-                : 'ring-1 ring-teal-500/20'
+                : ''
             }`}
             onMouseEnter={() => handleEquipmentHover('monitor')}
             onMouseLeave={() => setSelectedEquipment(null)}
           />
           <div
-            className={`absolute bottom-1/4 left-1/4 w-40 h-20 cursor-pointer transition-shadow duration-200 ring-1 ring-teal-500/40 ${
+            className={`absolute bottom-1/4 left-1/4 w-40 h-20 cursor-pointer transition-shadow duration-200 ring-1 ring-teal-500/40 hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 ${
               selectedEquipment === 'keyboard'
                 ? 'ring-2 ring-teal-500 ring-offset-2'
-                : 'ring-1 ring-teal-500/20'
+                : ''
             }`}
             onMouseEnter={() => handleEquipmentHover('keyboard')}
             onMouseLeave={() => setSelectedEquipment(null)}
           />
           <div
-            className={`absolute top-1/2 right-1/4 w-40 h-20 cursor-pointer transition-shadow duration-200 ring-1 ring-teal-500/40 ${
+            className={`absolute top-1/2 right-1/4 w-40 h-20 cursor-pointer transition-shadow duration-200 ring-1 ring-teal-500/40 hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 ${
               selectedEquipment === 'mouse'
                 ? 'ring-2 ring-teal-500 ring-offset-2'
-                : 'ring-1 ring-teal-500/20'
+                : ''
             }`}
             onMouseEnter={() => handleEquipmentHover('mouse')}
             onMouseLeave={() => setSelectedEquipment(null)}
           />
+           <div
+            className={`absolute top-1/2 left-1/4 w-40 h-20 cursor-pointer transition-shadow duration-200 ring-1 ring-teal-500/40 hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 ${
+              selectedEquipment === 'mousepad'
+                ? 'ring-2 ring-teal-500 ring-offset-2'
+                : ''
+            }`}
+            onMouseEnter={() => handleEquipmentHover('mousepad')}
+            onMouseLeave={() => setSelectedEquipment(null)}
+          />
           <div
-            className={`absolute bottom-1/4 right-1/4 w-40 h-20 cursor-pointer transition-shadow duration-200 ring-1 ring-teal-500/40 ${
+            className={`absolute bottom-1/4 right-1/4 w-40 h-20 cursor-pointer transition-shadow duration-200 ring-1 ring-teal-500/40 hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 ${
               selectedEquipment === 'speakers'
                 ? 'ring-2 ring-teal-500 ring-offset-2'
-                : 'ring-1 ring-teal-500/20'
+                : ''
             }`}
             onMouseEnter={() => handleEquipmentHover('speakers')}
             onMouseLeave={() => setSelectedEquipment(null)}
@@ -112,4 +126,3 @@ export default function Home() {
     </>
   );
 }
-
