@@ -35,6 +35,16 @@ const equipmentData = {
     description: 'A calendar for schedules',
     icon: Calendar,
   },
+  decoration: {
+    name: 'String Lights',
+    description: 'Ambient string lights for added coziness.',
+    icon: Speaker, // Replace with appropriate icon if available
+  },
+  headset: {
+    name: 'Wireless Headset',
+    description: 'A comfortable wireless headset for long work sessions.',
+    icon: Speaker, // Replace with appropriate icon if available
+  },
 };
 
 export default function Home() {
@@ -109,6 +119,24 @@ export default function Home() {
                 : ''
             }`}
             onMouseEnter={() => handleEquipmentHover('calendar')}
+            onMouseLeave={() => setSelectedEquipment(null)}
+          />
+           <div
+            className={`absolute bottom-1/4 left-1/2 w-40 h-20 cursor-pointer transition-shadow duration-200 ring-1 ring-teal-500/20 hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 ${
+              selectedEquipment === 'decoration'
+                ? 'ring-2 ring-teal-500 ring-offset-2'
+                : ''
+            }`}
+            onMouseEnter={() => handleEquipmentHover('decoration')}
+            onMouseLeave={() => setSelectedEquipment(null)}
+          />
+           <div
+            className={`absolute top-1/2 left-1/2 w-40 h-20 cursor-pointer transition-shadow duration-200 ring-1 ring-teal-500/20 hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 ${
+              selectedEquipment === 'headset'
+                ? 'ring-2 ring-teal-500 ring-offset-2'
+                : ''
+            }`}
+            onMouseEnter={() => handleEquipmentHover('headset')}
             onMouseLeave={() => setSelectedEquipment(null)}
           />
         </div>
