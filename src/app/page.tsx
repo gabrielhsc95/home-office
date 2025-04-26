@@ -48,22 +48,38 @@ export default function Home() {
           />
           {/* Hover areas */}
           <div
-            className="absolute top-1/4 left-1/4 w-40 h-20 cursor-pointer hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 transition-shadow duration-200 ring-1 ring-teal-500/40"
+            className={`absolute top-1/4 left-1/4 w-40 h-20 cursor-pointer transition-shadow duration-200 ring-1 ring-teal-500/40 ${
+              selectedEquipment === 'monitor'
+                ? 'ring-2 ring-teal-500 ring-offset-2'
+                : 'ring-1 ring-teal-500/20'
+            }`}
             onMouseEnter={() => handleEquipmentHover('monitor')}
             onMouseLeave={() => setSelectedEquipment(null)}
           />
           <div
-            className="absolute bottom-1/4 left-1/4 w-40 h-20 cursor-pointer hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 transition-shadow duration-200 ring-1 ring-teal-500/40"
+            className={`absolute bottom-1/4 left-1/4 w-40 h-20 cursor-pointer transition-shadow duration-200 ring-1 ring-teal-500/40 ${
+              selectedEquipment === 'keyboard'
+                ? 'ring-2 ring-teal-500 ring-offset-2'
+                : 'ring-1 ring-teal-500/20'
+            }`}
             onMouseEnter={() => handleEquipmentHover('keyboard')}
             onMouseLeave={() => setSelectedEquipment(null)}
           />
           <div
-            className="absolute top-1/2 right-1/4 w-40 h-20 cursor-pointer hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 transition-shadow duration-200 ring-1 ring-teal-500/40"
+            className={`absolute top-1/2 right-1/4 w-40 h-20 cursor-pointer transition-shadow duration-200 ring-1 ring-teal-500/40 ${
+              selectedEquipment === 'mouse'
+                ? 'ring-2 ring-teal-500 ring-offset-2'
+                : 'ring-1 ring-teal-500/20'
+            }`}
             onMouseEnter={() => handleEquipmentHover('mouse')}
             onMouseLeave={() => setSelectedEquipment(null)}
           />
           <div
-            className="absolute bottom-1/4 right-1/4 w-40 h-20 cursor-pointer hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 transition-shadow duration-200 ring-1 ring-teal-500/40"
+            className={`absolute bottom-1/4 right-1/4 w-40 h-20 cursor-pointer transition-shadow duration-200 ring-1 ring-teal-500/40 ${
+              selectedEquipment === 'speakers'
+                ? 'ring-2 ring-teal-500 ring-offset-2'
+                : 'ring-1 ring-teal-500/20'
+            }`}
             onMouseEnter={() => handleEquipmentHover('speakers')}
             onMouseLeave={() => setSelectedEquipment(null)}
           />
@@ -90,6 +106,10 @@ export default function Home() {
           )}
         </div>
       </div>
+      <footer className="p-4 text-center text-xs text-muted-foreground">
+        Vibe coded using Google Firebase Studio
+      </footer>
     </>
   );
 }
+
