@@ -17,7 +17,12 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
-      // Removed firebasestudio.ai pattern as it's no longer needed
+      {
+        protocol: 'https',
+        hostname: 'i.ibb.co', // Add i.ibb.co for the new image source
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
 };
