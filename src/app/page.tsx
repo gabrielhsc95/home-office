@@ -83,7 +83,7 @@ const equipmentData: Record<string, Equipment> = {
         <br /><br />
         <div className="relative aspect-video w-full max-w-xs mx-auto my-2 rounded overflow-hidden shadow-md">
             <Image
-                src="https://picsum.photos/300/200"
+                src="/images/giant_dragons.gif"
                 alt="Painting caricature humor example"
                 fill
                 className="object-contain" // Changed from object-cover to object-contain
