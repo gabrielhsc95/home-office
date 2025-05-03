@@ -58,7 +58,7 @@ const equipmentData: Record<string, Equipment> = {
   },
   speakers: {
     name: 'Soundbar',
-    description: 'A sleek soundbar placed below the monitor.',
+    description: "This soundbar mostly serves an aesthetic purpose below the monitor. For work audio, I rely on the headset, and for music, the Google Home speaker usually takes center stage.",
     icon: Speaker,
   },
   wallArtLeft: {
@@ -112,7 +112,7 @@ const equipmentData: Record<string, Equipment> = {
   },
   headset: {
     name: 'Headset',
-    description: 'MSCI gave me this one. Honestly, Earl could probably give you better specs than I can.', // Updated description
+    description: 'MSCI gave me this one. Honestly, Earl could probably give you better specs than I can.',
     icon: Headphones,
   },
   calendar: {
@@ -404,3 +404,4 @@ export default function Home() {
     </div>
   );
 }
+
