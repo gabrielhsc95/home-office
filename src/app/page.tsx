@@ -22,8 +22,23 @@ interface Equipment {
 // Define the equipment data with explicit typing
 const equipmentData: Record<string, Equipment> = {
   monitor: {
-    name: 'Ultrawide Monitor',
-    description: 'A large ultrawide monitor displaying a scenic view.',
+    name: 'LG UltraWide QHD 34-Inch Curved Computer Monitor 34WQ73A-B',
+    description: (
+        <>
+          <p>
+            I prefer an ultrawide monitor over multiple monitors because the split-screen capability fits a lot onto the screen without requiring much neck movement. The HDR feature also makes it quite comfortable for the eyes. It's mounted on a boom arm.
+          </p>
+          <h3 className="font-semibold mt-3 mb-1">Specs:</h3>
+          <ul className="list-disc list-inside space-y-1 text-xs text-muted-foreground/90">
+            <li><strong>Screen Size:</strong> 34 Inches</li>
+            <li><strong>Screen Resolution:</strong> 3440x1440</li>
+            <li><strong>Panel Type:</strong> IPS with HDR 10 Compatibility</li>
+            <li><strong>Aspect Ratio:</strong> 21:9</li>
+            <li><strong>Refresh Rate:</strong> 60Hz</li>
+            <li><strong>Color Gamut:</strong> sRGB 99%</li>
+          </ul>
+        </>
+      ),
     icon: Monitor,
   },
   keyboard: {
@@ -381,3 +396,4 @@ export default function Home() {
     </div>
   );
 }
+
