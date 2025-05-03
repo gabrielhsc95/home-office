@@ -309,7 +309,7 @@ export default function Home() {
               </p>
             </div>
           ) : (
-            <div className="flex flex-col items-center justify-center h-full text-center min-h-[150px] md:min-h-0">
+            <div className="flex flex-col items-center justify-center text-center min-h-[150px] md:min-h-0"> {/* Removed h-full */}
                <Mouse className="h-12 w-12 text-muted-foreground mb-4" />
               <p className="text-lg font-medium text-muted-foreground">
                 Hover over an item!
@@ -328,7 +328,7 @@ export default function Home() {
               Vibe coded using Google Firebase Studio
             </TooltipTrigger>
             <TooltipContent>
-              <p>Image and positions of the box were done "manually"</p>
+              <p>Image and positions of the box were done manually</p>
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>
