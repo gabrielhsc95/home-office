@@ -139,8 +139,16 @@ const equipmentData: Record<string, Equipment> = {
     icon: Usb,
   },
   paperWeight: {
-    name: 'Paper Weight',
-    description: 'A decorative paper weight on the desk.',
+    name: "Cristais Cá d'Oro Paper Weight",
+    description: (
+      <>
+        Made by <strong>Cristais Cá d&apos;Oro</strong>, it was a gift from a friend when I visited Poços de Caldas, MG, Brazil.
+        <br /><br />
+        The piece showcases the beautiful Murano glass style, known for its vibrant colors and intricate patterns, handcrafted using traditional techniques.
+        <br /><br />
+        It&apos;s shaped like an apple, serving as a reminder of the famous anecdote about how Isaac Newton supposedly discovered the laws of gravity.
+      </>
+    ),
     icon: Anchor, // Using Anchor as a placeholder icon
   },
 };
