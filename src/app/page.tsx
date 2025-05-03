@@ -42,18 +42,38 @@ const equipmentData: Record<string, Equipment> = {
     icon: Monitor,
   },
   keyboard: {
-    name: 'RGB Keyboard',
-    description: 'A mechanical keyboard with colorful RGB backlighting.',
+    name: 'Adam0110b Keyboard',
+    description: (
+        <>
+          <p>
+            It&apos;s a &quot;LEGO&quot; keyboard made by <strong>KBDcraft</strong>. I&apos;ve customized most of the keycaps, incorporating pieces from various LEGO sets like:
+          </p>
+          <ul className="list-disc list-inside space-y-1 text-xs text-muted-foreground/90 mt-2">
+            <li>The Milky Way Galaxy (31212)</li>
+            <li>Over the Moon with Pharrell Williams (10391?)</li>
+            <li>The DeLorean Time Machine Building Set (21103)</li>
+          </ul>
+        </>
+      ),
     icon: Keyboard,
   },
   mouse: {
-    name: 'Gaming Mouse',
-    description: 'A white gaming mouse with lighting effects.',
+    name: 'Logitech G502 X PLUS Millenium Falcon Edition Gaming Mouse',
+    description: 'I\'m a Star Wars fan, and this mouse looks awesome. I don\'t even use all the buttons it has.',
     icon: Mouse,
   },
   mousepad: {
-    name: 'Mouse Pad',
-    description: 'A patterned mouse pad providing a smooth surface.',
+    name: 'Pigeon Mouse Pad from Zoo das Aves',
+    description: (
+      <>
+        <p>
+          This was a gift from a friend during a visit to Poços de Caldas, MG, Brazil. We went to <strong>Zoo Das Aves</strong> (<em>Zoo Bird</em>).
+        </p>
+        <p className="mt-2">
+          A funny fact is that it features a pigeon, often unfairly associated with being ugly or called &quot;rats with wings.&quot; However, this design showcases a truly beautiful pigeon.
+        </p>
+      </>
+    ),
     icon: Mouse, // Using Mouse icon as a placeholder for MousePad
   },
   speakers: {
@@ -65,7 +85,7 @@ const equipmentData: Record<string, Equipment> = {
     name: 'Giant Dragon',
     description: (
       <>
-        This lighting painting is by Weishui Liu (<span className="font-semibold">@liuwishuipainting</span>).
+       This lighting painting is by Weishui Liu (<span className="font-semibold">@liuwishuipainting</span>).
         I enjoy his Instagram content where he often humorously leads you to expect incredible detail, only to reveal a charming caricature.
         <br /><br />
         While this painting showcases his skill, it is hidden behind a funny element, playing on that expectation.
@@ -107,7 +127,16 @@ const equipmentData: Record<string, Equipment> = {
   },
   lego: {
     name: 'Lego Decoration',
-    description: 'A small Lego model on the left side of the desk.',
+    description: (
+        <>
+          <p>
+            The LEGO decoration changes over time. Currently, I have the &quot;Everyone Is Awesome&quot; set (40516) displayed, complete with a light modification.
+          </p>
+          <p className="mt-2">
+            I&apos;m a LEGO fan, which is also reflected in my keyboard choice.
+          </p>
+        </>
+      ),
     icon: ToyBrick,
   },
   headset: {
@@ -118,14 +147,18 @@ const equipmentData: Record<string, Equipment> = {
   calendar: {
     name: '12,025 Human Era Calendar',
     description: (
-      <>
-        The 12,025 Human Era Calendar by <span className="font-semibold">Kurzgesagt – In a Nutshell</span>.
-        <br /><br />
-        This calendar honors humanity&apos;s collective story by adding 10,000 years to the current date, inspiring reflection on our ancestors&apos; achievements and delving into our fascinating history.
-        <br /><br />
-        The 2025 edition celebrates the great journey of humankind out of Africa, unfolding an epic new story each month as you track your own adventures.
-      </>
-    ),
+        <>
+         <p>
+           The 12,025 Human Era Calendar by <span className="font-semibold">Kurzgesagt – In a Nutshell</span>.
+         </p>
+         <p className="mt-2">
+           This calendar honors humanity&apos;s collective story by adding 10,000 years to the current date, inspiring reflection on our ancestors&apos; achievements and delving into our fascinating history.
+         </p>
+         <p className="mt-2">
+           The 2025 edition celebrates the great journey of humankind out of Africa, unfolding an epic new story each month as you track your own adventures.
+         </p>
+        </>
+      ),
     icon: Calendar,
   },
   googleHome: {
@@ -134,8 +167,17 @@ const equipmentData: Record<string, Equipment> = {
     icon: Radio,
   },
   usbHub: {
-    name: 'USB Hub',
-    description: 'A USB hub located under the monitor for connecting devices.',
+    name: 'SNES Controller Inspired USB Hub',
+     description: (
+        <>
+          <p>
+            A Temu find, this USB hub is inspired by the classic SNES controller design.
+          </p>
+          <p className="mt-2">
+            It was a gift from my girlfriend. While the specs might not be top-tier, it definitely looks cool on the desk!
+          </p>
+        </>
+      ),
     icon: Usb,
   },
   paperWeight: {
@@ -404,3 +446,8 @@ export default function Home() {
     </div>
   );
 }
+
+    
+    
+    
+    
