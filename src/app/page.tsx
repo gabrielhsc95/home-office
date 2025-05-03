@@ -3,7 +3,7 @@
 
 import Image from 'next/image';
 import React, { useState, type ComponentType } from 'react';
-import { Monitor, Keyboard, Mouse, Speaker, Calendar, Headphones, Lightbulb, Image as ImageIcon, Camera, ToyBrick } from 'lucide-react'; // Added ImageIcon, Camera, ToyBrick
+import { Monitor, Keyboard, Mouse, Speaker, Calendar, Headphones, Lightbulb, Image as ImageIcon, Camera, ToyBrick } from 'lucide-react';
 import { cn } from "@/lib/utils"; // Import the cn utility
 
 // Define a type for the equipment data structure
@@ -40,27 +40,27 @@ const equipmentData: Record<string, Equipment> = {
     description: 'A sleek soundbar placed below the monitor.',
     icon: Speaker,
   },
-  wallArtLeft: { // Renamed from calendar
+  wallArtLeft: {
     name: 'Wall Art (Left)',
     description: 'A poster hanging on the left wall.',
-    icon: ImageIcon, // Changed icon
+    icon: ImageIcon,
   },
-  wallArtRight: { // New item
+  wallArtRight: {
     name: 'Wall Art (Right)',
     description: 'A framed poster on the right wall.',
     icon: ImageIcon,
   },
-  ringLight: { // New item
+  ringLight: {
     name: 'Ring Light',
     description: 'A ring light providing illumination from the right.',
     icon: Lightbulb,
   },
-  webcam: { // New item
+  webcam: {
     name: 'Webcam',
     description: 'A webcam positioned on top of the monitor.',
     icon: Camera,
   },
-  lego: { // New item
+  lego: {
     name: 'Lego Decoration',
     description: 'A small Lego model on the left side of the desk.',
     icon: ToyBrick,
@@ -69,6 +69,11 @@ const equipmentData: Record<string, Equipment> = {
     name: 'Headset',
     description: 'A headset hanging on the left side of the desk.',
     icon: Headphones,
+  },
+  calendar: { // Added Calendar back
+    name: 'Desk Calendar',
+    description: 'A small desk calendar next to the keyboard.',
+    icon: Calendar,
   },
 };
 
@@ -225,6 +230,17 @@ export default function Home() {
               onMouseEnter={() => handleEquipmentHover('headset')}
               onMouseLeave={() => setSelectedEquipment(null)}
                aria-label="Select Headset area"
+            />
+            {/* Calendar */}
+             <div
+               className={cn(
+                hoverAreaBaseClasses,
+                "top-[78%] left-[73%] w-[10%] h-[7%]", // Adjust position for calendar
+                selectedEquipment === 'calendar' ? selectedClasses : unselectedClasses
+              )}
+              onMouseEnter={() => handleEquipmentHover('calendar')}
+              onMouseLeave={() => setSelectedEquipment(null)}
+               aria-label="Select Calendar area"
             />
           </div>
         </div>
