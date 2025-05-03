@@ -83,7 +83,7 @@ const equipmentData: Record<string, Equipment> = {
         <br /><br />
         <div className="relative aspect-square w-full max-w-xs mx-auto my-2 rounded overflow-hidden shadow-md">
             <Image
-                src="/images/giant_dragons.gif"
+                src="/images/giant_dragon.gif"
                 alt="Painting caricature humor example"
                 fill
                 className="object-contain" // Keep object-contain
