@@ -26,7 +26,7 @@ const equipmentData: Record<string, Equipment> = {
     description: (
         <>
           <p>
-            I prefer an ultrawide monitor over multiple monitors because the split-screen capability fits a lot onto the screen without requiring much neck movement. The HDR feature also makes it quite comfortable for the eyes. It's mounted on a boom arm.
+            I prefer an ultrawide monitor over multiple monitors because the split-screen capability fits a lot onto the screen without requiring much neck movement. The HDR feature also makes it quite comfortable for the eyes. It&apos;s mounted on a boom arm.
           </p>
           <h3 className="font-semibold mt-3 mb-1">Specs:</h3>
           <ul className="list-disc list-inside space-y-1 text-xs text-muted-foreground/90">
@@ -63,7 +63,7 @@ const equipmentData: Record<string, Equipment> = {
   },
   wallArtLeft: {
     name: 'Giant Dragon',
-    description: ( // Updated description with ReactNode
+    description: (
       <>
         This lighting painting is by Weishui Liu (<span className="font-semibold">@liuwishuipainting</span>).
         I enjoy his Instagram content where he often humorously leads you to expect incredible detail, only to reveal a charming caricature.
@@ -85,7 +85,7 @@ const equipmentData: Record<string, Equipment> = {
   },
   wallArtRight: {
     name: 'Back to Earth Poster',
-    description: ( // Updated description with ReactNode
+    description: (
       <>
         This poster is by <span className="font-semibold">Kurzgesagt – In a Nutshell</span>.
         I&apos;m a big fan of their channel; they were one of the key inspirations behind my decision to major in Physics.
@@ -112,12 +112,12 @@ const equipmentData: Record<string, Equipment> = {
   },
   headset: {
     name: 'Headset',
-    description: 'A headset hanging on the left side of the desk.',
+    description: 'MSCI gave me this one. Honestly, Earl could probably give you better specs than I can.', // Updated description
     icon: Headphones,
   },
   calendar: {
     name: '12,025 Human Era Calendar',
-    description: ( // Updated description using ReactNode
+    description: (
       <>
         The 12,025 Human Era Calendar by <span className="font-semibold">Kurzgesagt – In a Nutshell</span>.
         <br /><br />
@@ -396,4 +396,3 @@ export default function Home() {
     </div>
   );
 }
-
