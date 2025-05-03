@@ -11,7 +11,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import Link from 'next/link'; // Import Link for hyperlinks
+// Link is no longer needed as we are removing hyperlinks
 
 
 // Define a type for the equipment data structure
@@ -50,15 +50,13 @@ const equipmentData: Record<string, Equipment> = {
   },
   wallArtLeft: {
     name: 'Giant Dragon', // Updated name
-    description: ( // Updated description with ReactNode
+    description: ( // Updated description with ReactNode, removed Link
       <>
         This lighting painting is by Weishui Liu{' '}
-        <Link href="https://www.instagram.com/liuwishuipainting/" target="_blank" rel="noopener noreferrer" className="text-accent underline hover:text-accent/80">
-          (@liuwishuipainting)
-        </Link>.
+        <span className="font-semibold">(@liuwishuipainting)</span>.
         I enjoy his Instagram content where he often humorously leads you to expect incredible detail, only to reveal a charming caricature.
         <br /><br />
-        While this painting showcases his skill, it has a hidden funny element, playing on that expectation.
+        While this painting showcases his skill, it is hidden behind a funny element, playing on that expectation.
         <br /><br />
         <span className="italic text-muted-foreground/80">[Placeholder for a GIF showing the painting's humor]</span>
       </>
@@ -92,12 +90,10 @@ const equipmentData: Record<string, Equipment> = {
   },
   calendar: {
     name: '12,025 Human Era Calendar', // Updated name
-    description: ( // Updated description using ReactNode
+    description: ( // Updated description using ReactNode, removed Link
       <>
         The 12,025 Human Era Calendar by{' '}
-        <Link href="https://www.youtube.com/@kurzgesagt" target="_blank" rel="noopener noreferrer" className="text-accent underline hover:text-accent/80">
-          Kurzgesagt – In a Nutshell
-        </Link>.
+        <span className="font-semibold">Kurzgesagt – In a Nutshell</span>.
         <br /><br />
         This calendar honors humanity's collective story by adding 10,000 years to the current date, inspiring reflection on our ancestors' achievements and delving into our fascinating history.
         <br /><br />
@@ -374,3 +370,4 @@ export default function Home() {
     </div>
   );
 }
+
