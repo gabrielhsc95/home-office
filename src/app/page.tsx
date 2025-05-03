@@ -115,7 +115,7 @@ export default function Home() {
             <div
               className={cn(
                 hoverAreaBaseClasses,
-                "top-[83%] left-[72%] w-[10%] h-[10%]", // Position relative to container
+                "top-[83%] left-[72%] w-[10%] h-[10%] z-20", // Position relative to container, higher z-index
                 selectedEquipment === 'mouse' ? selectedClasses : unselectedClasses
               )}
               onMouseEnter={() => handleEquipmentHover('mouse')}
@@ -126,7 +126,7 @@ export default function Home() {
             <div
               className={cn(
                 hoverAreaBaseClasses,
-                "top-[82%] left-[67%] w-[18%] h-[14%]", // Position relative to container
+                "top-[82%] left-[67%] w-[18%] h-[14%] z-10", // Position relative to container, lower z-index
                 selectedEquipment === 'mousepad' ? selectedClasses : unselectedClasses
               )}
               onMouseEnter={() => handleEquipmentHover('mousepad')}
