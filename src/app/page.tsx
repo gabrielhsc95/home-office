@@ -79,7 +79,7 @@ export default function Home() {
         {/* Image Panel */}
         <div className="relative w-2/3 p-4">
           <Image
-            src="/home_office.jpg" // Use the local image file from the public folder
+            src="/images/home_office.jpg"// Use the local image file from the public folder
             alt="Home Office Setup"
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 66vw"
