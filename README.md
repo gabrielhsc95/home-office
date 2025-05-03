@@ -1,3 +1,5 @@
+I vibe coded this using Google Firebase Studio.
+
 # Firebase Studio
 
 This is a NextJS starter in Firebase Studio.
