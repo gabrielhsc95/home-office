@@ -1,8 +1,9 @@
+
 "use client";
 
 import Image from 'next/image';
 import React, { useState, type ComponentType } from 'react';
-import { Monitor, Keyboard, Mouse, Speaker, Calendar, Headphones, Lightbulb } from 'lucide-react';
+import { Monitor, Keyboard, Mouse, Speaker, Calendar, Headphones, Lightbulb, Image as ImageIcon, Camera, ToyBrick } from 'lucide-react'; // Added ImageIcon, Camera, ToyBrick
 import { cn } from "@/lib/utils"; // Import the cn utility
 
 // Define a type for the equipment data structure
@@ -39,15 +40,30 @@ const equipmentData: Record<string, Equipment> = {
     description: 'A sleek soundbar placed below the monitor.',
     icon: Speaker,
   },
-  calendar: {
-    name: 'Wall Calendar',
-    description: 'A "Year 12,025" calendar hanging on the wall.',
-    icon: Calendar,
+  wallArtLeft: { // Renamed from calendar
+    name: 'Wall Art (Left)',
+    description: 'A poster hanging on the left wall.',
+    icon: ImageIcon, // Changed icon
   },
-  decoration: {
-    name: 'Wall Art & Lighting',
-    description: 'Posters and a ring light decorating the wall.',
+  wallArtRight: { // New item
+    name: 'Wall Art (Right)',
+    description: 'A framed poster on the right wall.',
+    icon: ImageIcon,
+  },
+  ringLight: { // New item
+    name: 'Ring Light',
+    description: 'A ring light providing illumination from the right.',
     icon: Lightbulb,
+  },
+  webcam: { // New item
+    name: 'Webcam',
+    description: 'A webcam positioned on top of the monitor.',
+    icon: Camera,
+  },
+  lego: { // New item
+    name: 'Lego Decoration',
+    description: 'A small Lego model on the left side of the desk.',
+    icon: ToyBrick,
   },
   headset: {
     name: 'Headset',
@@ -144,27 +160,60 @@ export default function Home() {
               onMouseLeave={() => setSelectedEquipment(null)}
                aria-label="Select Soundbar area"
             />
-            {/* Calendar */}
+            {/* Wall Art Left */}
             <div
                className={cn(
                 hoverAreaBaseClasses,
                 "top-[8%] left-[10%] w-[18%] h-[20%]", // Position relative to container
-                selectedEquipment === 'calendar' ? selectedClasses : unselectedClasses
+                selectedEquipment === 'wallArtLeft' ? selectedClasses : unselectedClasses
               )}
-              onMouseEnter={() => handleEquipmentHover('calendar')}
+              onMouseEnter={() => handleEquipmentHover('wallArtLeft')}
               onMouseLeave={() => setSelectedEquipment(null)}
-               aria-label="Select Calendar area"
+               aria-label="Select Left Wall Art area"
             />
-            {/* Decoration (Wall Art & Light) */}
+             {/* Wall Art Right */}
+             <div
+               className={cn(
+                hoverAreaBaseClasses,
+                "top-[5%] left-[55%] w-[25%] h-[20%]", // Position relative to container
+                selectedEquipment === 'wallArtRight' ? selectedClasses : unselectedClasses
+              )}
+              onMouseEnter={() => handleEquipmentHover('wallArtRight')}
+              onMouseLeave={() => setSelectedEquipment(null)}
+               aria-label="Select Right Wall Art area"
+            />
+            {/* Ring Light */}
             <div
                className={cn(
                 hoverAreaBaseClasses,
-                "top-[10%] left-[35%] w-[55%] h-[25%]", // Position relative to container
-                selectedEquipment === 'decoration' ? selectedClasses : unselectedClasses
+                "top-[15%] left-[75%] w-[15%] h-[20%]", // Position relative to container
+                selectedEquipment === 'ringLight' ? selectedClasses : unselectedClasses
               )}
-              onMouseEnter={() => handleEquipmentHover('decoration')}
+              onMouseEnter={() => handleEquipmentHover('ringLight')}
               onMouseLeave={() => setSelectedEquipment(null)}
-               aria-label="Select Wall Decoration area"
+               aria-label="Select Ring Light area"
+            />
+             {/* Webcam */}
+            <div
+               className={cn(
+                hoverAreaBaseClasses,
+                "top-[30%] left-[45%] w-[10%] h-[8%]", // Position relative to container
+                selectedEquipment === 'webcam' ? selectedClasses : unselectedClasses
+              )}
+              onMouseEnter={() => handleEquipmentHover('webcam')}
+              onMouseLeave={() => setSelectedEquipment(null)}
+               aria-label="Select Webcam area"
+            />
+             {/* Lego Decoration */}
+             <div
+               className={cn(
+                hoverAreaBaseClasses,
+                "top-[75%] left-[18%] w-[8%] h-[10%]", // Position relative to container
+                selectedEquipment === 'lego' ? selectedClasses : unselectedClasses
+              )}
+              onMouseEnter={() => handleEquipmentHover('lego')}
+              onMouseLeave={() => setSelectedEquipment(null)}
+               aria-label="Select Lego Decoration area"
             />
             {/* Headset */}
             <div
@@ -186,6 +235,7 @@ export default function Home() {
           {selectedEquipment ? (
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
+                {/* Use React.createElement to dynamically render the icon */}
                 {React.createElement(equipmentData[selectedEquipment].icon, { className: "h-6 w-6 text-accent flex-shrink-0" })}
                 <h2 className="text-xl font-semibold">{equipmentData[selectedEquipment].name}</h2>
               </div>
