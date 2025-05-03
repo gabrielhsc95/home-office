@@ -3,8 +3,8 @@
 
 import Image from 'next/image';
 import React, { useState, type ComponentType } from 'react';
-import { Monitor, Keyboard, Mouse, Speaker, Calendar, Headphones, Lightbulb, Image as ImageIcon, Camera, ToyBrick, Radio, Usb } from 'lucide-react'; // Added Radio, Usb
-import { cn } from "@/lib/utils"; // Import the cn utility
+import { Monitor, Keyboard, Mouse, Speaker, Calendar, Headphones, Lightbulb, Image as ImageIcon, Camera, ToyBrick, Radio, Usb, Anchor } from 'lucide-react'; // Added Anchor
+import { cn } from "@/lib/utils";
 
 // Define a type for the equipment data structure
 interface Equipment {
@@ -85,7 +85,16 @@ const equipmentData: Record<string, Equipment> = {
     description: 'A USB hub located under the monitor for connecting devices.',
     icon: Usb,
   },
-  // 'deskDecoration' is covered by the 'lego' entry above.
+  deskDecoration: { // Added Desk Decoration
+    name: 'Desk Decoration',
+    description: 'Various small items adding personality to the desk.',
+    icon: ToyBrick, // Using ToyBrick as a generic decoration icon
+  },
+   paperWeight: { // Added Paper Weight
+    name: 'Paper Weight',
+    description: 'A decorative paper weight on the desk.',
+    icon: Anchor, // Using Anchor as a placeholder icon
+  },
 };
 
 // Define the type for selected equipment key
@@ -229,7 +238,18 @@ export default function Home() {
               )}
               onMouseEnter={() => handleEquipmentHover('lego')}
               onMouseLeave={() => setSelectedEquipment(null)}
-               aria-label="Select Lego Decoration area" // This serves as the desk decoration
+               aria-label="Select Lego Decoration area"
+            />
+             {/* Desk Decoration (General Area) */}
+             <div
+               className={cn(
+                hoverAreaBaseClasses,
+                "top-[65%] left-[63%] w-[7%] h-[10%]", // Example position for general desk decoration
+                selectedEquipment === 'deskDecoration' ? selectedClasses : unselectedClasses
+              )}
+              onMouseEnter={() => handleEquipmentHover('deskDecoration')}
+              onMouseLeave={() => setSelectedEquipment(null)}
+               aria-label="Select Desk Decoration area"
             />
             {/* Headset */}
             <div
@@ -275,6 +295,17 @@ export default function Home() {
               onMouseLeave={() => setSelectedEquipment(null)}
                aria-label="Select USB Hub area"
             />
+             {/* Paper Weight */}
+             <div
+               className={cn(
+                hoverAreaBaseClasses,
+                "top-[70%] left-[35%] w-[4%] h-[7%]", // Position for Paper Weight (left of soundbar)
+                selectedEquipment === 'paperWeight' ? selectedClasses : unselectedClasses
+              )}
+              onMouseEnter={() => handleEquipmentHover('paperWeight')}
+              onMouseLeave={() => setSelectedEquipment(null)}
+               aria-label="Select Paper Weight area"
+            />
           </div>
         </div>
 
@@ -311,4 +342,3 @@ export default function Home() {
     </div>
   );
 }
-
