@@ -75,9 +75,10 @@ export default function Home() {
             <Image
               src="https://firebasestudio.ai/api/files/fbstudio-users/projects/clxhj18y100011v950c3r72k1/clxikw4p0002k77l56i8b7l6w"
               alt="Home Office Setup"
-              width={1000} // Adjusted width for better fit, maintain aspect ratio with height
-              height={1333} // Adjusted height based on image aspect ratio
-              className="h-full w-full rounded-lg object-contain" // Use object-contain to show the whole image
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 66vw" // Provide sizes for responsive loading
+              className="rounded-lg object-contain" // Use object-contain to show the whole image
+              priority // Prioritize loading this image as it's LCP
               data-ai-hint="home office desk setup"
             />
 
@@ -87,80 +88,88 @@ export default function Home() {
               className={`absolute top-[35%] left-[15%] w-[70%] h-[30%] cursor-pointer rounded-md ring-1 ring-teal-500/30 hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 hover:shadow-[0_0_15px_5px_rgba(59,130,246,0.5)] transition-all duration-200 ${
                 selectedEquipment === 'monitor'
                   ? 'ring-2 ring-teal-500 ring-offset-2 shadow-[0_0_15px_5px_rgba(59,130,246,0.5)]'
-                  : 'shadow-[0_0_8px_2px_rgba(59,130,246,0.2)]' // Faint glow when not selected
+                  : 'shadow-[0_0_8px_2px_rgba(59,130,246,0.3)]' // Increased faint glow visibility
               }`}
               onMouseEnter={() => handleEquipmentHover('monitor')}
               onMouseLeave={() => setSelectedEquipment(null)}
+              aria-label="Select Monitor area"
             />
              {/* Keyboard */}
             <div
                className={`absolute bottom-[15%] left-[20%] w-[50%] h-[15%] cursor-pointer rounded-md ring-1 ring-teal-500/30 hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 hover:shadow-[0_0_15px_5px_rgba(59,130,246,0.5)] transition-all duration-200 ${
                 selectedEquipment === 'keyboard'
                   ? 'ring-2 ring-teal-500 ring-offset-2 shadow-[0_0_15px_5px_rgba(59,130,246,0.5)]'
-                  : 'shadow-[0_0_8px_2px_rgba(59,130,246,0.2)]'
+                  : 'shadow-[0_0_8px_2px_rgba(59,130,246,0.3)]'
               }`}
               onMouseEnter={() => handleEquipmentHover('keyboard')}
               onMouseLeave={() => setSelectedEquipment(null)}
+               aria-label="Select Keyboard area"
             />
             {/* Mouse */}
             <div
                className={`absolute bottom-[17%] left-[72%] w-[10%] h-[10%] cursor-pointer rounded-md ring-1 ring-teal-500/30 hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 hover:shadow-[0_0_15px_5px_rgba(59,130,246,0.5)] transition-all duration-200 ${
                 selectedEquipment === 'mouse'
                   ? 'ring-2 ring-teal-500 ring-offset-2 shadow-[0_0_15px_5px_rgba(59,130,246,0.5)]'
-                  : 'shadow-[0_0_8px_2px_rgba(59,130,246,0.2)]'
+                  : 'shadow-[0_0_8px_2px_rgba(59,130,246,0.3)]'
               }`}
               onMouseEnter={() => handleEquipmentHover('mouse')}
               onMouseLeave={() => setSelectedEquipment(null)}
+               aria-label="Select Mouse area"
             />
             {/* Mousepad */}
             <div
               className={`absolute bottom-[14%] left-[68%] w-[18%] h-[15%] cursor-pointer rounded-md ring-1 ring-teal-500/30 hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 hover:shadow-[0_0_15px_5px_rgba(59,130,246,0.5)] transition-all duration-200 ${
                 selectedEquipment === 'mousepad'
                   ? 'ring-2 ring-teal-500 ring-offset-2 shadow-[0_0_15px_5px_rgba(59,130,246,0.5)]'
-                  : 'shadow-[0_0_8px_2px_rgba(59,130,246,0.2)]'
+                  : 'shadow-[0_0_8px_2px_rgba(59,130,246,0.3)]'
               }`}
               onMouseEnter={() => handleEquipmentHover('mousepad')}
               onMouseLeave={() => setSelectedEquipment(null)}
+               aria-label="Select Mousepad area"
             />
             {/* Speakers (Soundbar) */}
             <div
                className={`absolute bottom-[29%] left-[30%] w-[40%] h-[8%] cursor-pointer rounded-md ring-1 ring-teal-500/30 hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 hover:shadow-[0_0_15px_5px_rgba(59,130,246,0.5)] transition-all duration-200 ${
                 selectedEquipment === 'speakers'
                   ? 'ring-2 ring-teal-500 ring-offset-2 shadow-[0_0_15px_5px_rgba(59,130,246,0.5)]'
-                  : 'shadow-[0_0_8px_2px_rgba(59,130,246,0.2)]'
+                  : 'shadow-[0_0_8px_2px_rgba(59,130,246,0.3)]'
               }`}
               onMouseEnter={() => handleEquipmentHover('speakers')}
               onMouseLeave={() => setSelectedEquipment(null)}
+               aria-label="Select Soundbar area"
             />
             {/* Calendar */}
             <div
                className={`absolute top-[13%] left-[10%] w-[18%] h-[20%] cursor-pointer rounded-md ring-1 ring-teal-500/30 hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 hover:shadow-[0_0_15px_5px_rgba(59,130,246,0.5)] transition-all duration-200 ${
                 selectedEquipment === 'calendar'
                   ? 'ring-2 ring-teal-500 ring-offset-2 shadow-[0_0_15px_5px_rgba(59,130,246,0.5)]'
-                  : 'shadow-[0_0_8px_2px_rgba(59,130,246,0.2)]'
+                  : 'shadow-[0_0_8px_2px_rgba(59,130,246,0.3)]'
               }`}
               onMouseEnter={() => handleEquipmentHover('calendar')}
               onMouseLeave={() => setSelectedEquipment(null)}
+               aria-label="Select Calendar area"
             />
             {/* Decoration (Wall Art & Light) */}
             <div
                className={`absolute top-[10%] left-[35%] w-[55%] h-[25%] cursor-pointer rounded-md ring-1 ring-teal-500/30 hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 hover:shadow-[0_0_15px_5px_rgba(59,130,246,0.5)] transition-all duration-200 ${
                 selectedEquipment === 'decoration'
                   ? 'ring-2 ring-teal-500 ring-offset-2 shadow-[0_0_15px_5px_rgba(59,130,246,0.5)]'
-                  : 'shadow-[0_0_8px_2px_rgba(59,130,246,0.2)]'
+                  : 'shadow-[0_0_8px_2px_rgba(59,130,246,0.3)]'
               }`}
               onMouseEnter={() => handleEquipmentHover('decoration')}
               onMouseLeave={() => setSelectedEquipment(null)}
+               aria-label="Select Wall Decoration area"
             />
             {/* Headset */}
             <div
                className={`absolute top-[45%] left-[5%] w-[12%] h-[25%] cursor-pointer rounded-md ring-1 ring-teal-500/30 hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 hover:shadow-[0_0_15px_5px_rgba(59,130,246,0.5)] transition-all duration-200 ${
                 selectedEquipment === 'headset'
                   ? 'ring-2 ring-teal-500 ring-offset-2 shadow-[0_0_15px_5px_rgba(59,130,246,0.5)]'
-                  : 'shadow-[0_0_8px_2px_rgba(59,130,246,0.2)]'
+                  : 'shadow-[0_0_8px_2px_rgba(59,130,246,0.3)]'
               }`}
               onMouseEnter={() => handleEquipmentHover('headset')}
               onMouseLeave={() => setSelectedEquipment(null)}
+               aria-label="Select Headset area"
             />
           </div>
 
@@ -197,5 +206,3 @@ export default function Home() {
     </>
   );
 }
-
-    
