@@ -51,7 +51,7 @@ const equipmentData: Record<string, Equipment> = {
     description: ( // Updated description with ReactNode, removed Link
       <>
         This lighting painting is by Weishui Liu{' '}
-        <span className="font-semibold">@liuwishuipainting</span>.
+        (<span className="font-semibold">@liuwishuipainting</span>).
         I enjoy his Instagram content where he often humorously leads you to expect incredible detail, only to reveal a charming caricature.
         <br /><br />
         While this painting showcases his skill, it is hidden behind a funny element, playing on that expectation.
@@ -65,9 +65,6 @@ const equipmentData: Record<string, Equipment> = {
                 data-ai-hint="funny caricature art"
              />
         </div>
-        <span className="italic text-muted-foreground/80 text-xs block text-center">
-          [Placeholder for a GIF showing the painting's humor]
-        </span>
       </>
     ),
     icon: ImageIcon,
@@ -379,3 +376,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
