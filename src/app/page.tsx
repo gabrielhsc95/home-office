@@ -130,7 +130,7 @@ const equipmentData: Record<string, Equipment> = {
   },
   googleHome: {
     name: 'Google Home Speaker',
-    description: 'A smart speaker on the left side of the desk.',
+    description: 'While I mostly use it for listening to Spotify, I\'m a fan of Google products—which explains my Pixel phone and why this project is being built with Google Firebase Studio.',
     icon: Radio,
   },
   usbHub: {
