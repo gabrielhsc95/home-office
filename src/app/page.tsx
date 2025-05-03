@@ -11,8 +11,6 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-// Link is no longer needed as we are removing hyperlinks
-
 
 // Define a type for the equipment data structure
 interface Equipment {
@@ -53,12 +51,23 @@ const equipmentData: Record<string, Equipment> = {
     description: ( // Updated description with ReactNode, removed Link
       <>
         This lighting painting is by Weishui Liu{' '}
-        <span className="font-semibold">(@liuwishuipainting)</span>.
+        <span className="font-semibold">@liuwishuipainting</span>.
         I enjoy his Instagram content where he often humorously leads you to expect incredible detail, only to reveal a charming caricature.
         <br /><br />
         While this painting showcases his skill, it is hidden behind a funny element, playing on that expectation.
         <br /><br />
-        <span className="italic text-muted-foreground/80">[Placeholder for a GIF showing the painting's humor]</span>
+        <div className="relative aspect-video w-full max-w-xs mx-auto my-2 rounded overflow-hidden shadow-md">
+            <Image
+                src="https://picsum.photos/300/169" // Placeholder image
+                alt="Placeholder for GIF showing painting's humor"
+                fill
+                className="object-cover"
+                data-ai-hint="funny caricature art"
+             />
+        </div>
+        <span className="italic text-muted-foreground/80 text-xs block text-center">
+          [Placeholder for a GIF showing the painting's humor]
+        </span>
       </>
     ),
     icon: ImageIcon,
@@ -370,4 +379,3 @@ export default function Home() {
     </div>
   );
 }
-
