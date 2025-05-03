@@ -3,8 +3,14 @@
 
 import Image from 'next/image';
 import React, { useState, type ComponentType } from 'react';
-import { Monitor, Keyboard, Mouse, Speaker, Calendar, Headphones, Lightbulb, Image as ImageIcon, Camera, ToyBrick, Radio, Usb, Anchor } from 'lucide-react';
+import { Monitor, Keyboard, Mouse, Speaker, Calendar, Headphones, Lightbulb, Image as ImageIcon, Camera, ToyBrick, Radio, Usb, Anchor, Info } from 'lucide-react';
 import { cn } from "@/lib/utils";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 
 // Define a type for the equipment data structure
@@ -321,8 +327,18 @@ export default function Home() {
           )}
         </div>
       </main>
-      <footer className="p-4 text-center text-xs text-muted-foreground border-t border-border">
-        Vibe coded using Google Firebase Studio
+      <footer className="p-4 text-center text-xs text-muted-foreground border-t border-border flex items-center justify-center space-x-1">
+        <span>Vibe coded using Google Firebase Studio</span>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger aria-label="More information">
+              <Info className="h-4 w-4 cursor-pointer" />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>The images and the position of the boxes were set manually</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
       </footer>
     </div>
   );
