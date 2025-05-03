@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from 'next/image';
@@ -70,30 +69,31 @@ export default function Home() {
   // Common class string for hover areas
   const hoverAreaBaseClasses = "absolute cursor-pointer rounded-md ring-1 ring-teal-500/30 hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 hover:shadow-[0_0_15px_5px_rgba(0,128,128,0.5)] transition-all duration-200"; // Teal glow on hover
   const selectedClasses = "ring-2 ring-teal-500 ring-offset-2 shadow-[0_0_15px_5px_rgba(0,128,128,0.5)]"; // Stronger teal glow when selected
-  const unselectedClasses = "shadow-[0_0_8px_2px_rgba(0,128,128,0.3)]"; // Faint teal glow when not selected
+  const unselectedClasses = "shadow-[0_0_8px_2px_rgba(0,128,128,0.4)]"; // Slightly more visible glow
 
 
   return (
     <div className="flex h-screen flex-col bg-background text-foreground">
       <main className="flex flex-1 overflow-hidden">
-        {/* Image Panel */}
+        {/* Image Panel - Relative container for image and hover areas */}
+        {/* The image uses object-cover to fill this container */}
         <div className="relative w-2/3 p-4">
           <Image
-            src="/images/home_office.jpg"// Use the local image file from the public folder
+            src="/images/home_office.jpg" // Use the local image file from the public folder
             alt="Home Office Setup"
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 66vw"
-            className="rounded-lg object-contain"
+            className="rounded-lg object-cover" // Use object-cover to fill container
             priority // Load image immediately
             data-ai-hint="home office desk setup"
           />
 
-          {/* Hover areas - positions and sizes adjusted approximately for the new image */}
+          {/* Hover areas - positions and sizes are percentages relative to the container above */}
           {/* Monitor */}
           <div
             className={cn(
               hoverAreaBaseClasses,
-              "top-[35%] left-[15%] w-[70%] h-[30%]", // Adjusted slightly if needed
+              "top-[35%] left-[15%] w-[70%] h-[30%]", // Position relative to container
               selectedEquipment === 'monitor' ? selectedClasses : unselectedClasses
             )}
             onMouseEnter={() => handleEquipmentHover('monitor')}
@@ -104,7 +104,7 @@ export default function Home() {
           <div
             className={cn(
               hoverAreaBaseClasses,
-              "top-[82%] left-[23%] w-[48%] h-[12%]", // Adjusted for new image
+              "top-[82%] left-[23%] w-[48%] h-[12%]", // Position relative to container
               selectedEquipment === 'keyboard' ? selectedClasses : unselectedClasses
             )}
             onMouseEnter={() => handleEquipmentHover('keyboard')}
@@ -115,7 +115,7 @@ export default function Home() {
           <div
             className={cn(
               hoverAreaBaseClasses,
-              "top-[83%] left-[72%] w-[10%] h-[10%]", // Adjusted for new image
+              "top-[83%] left-[72%] w-[10%] h-[10%]", // Position relative to container
               selectedEquipment === 'mouse' ? selectedClasses : unselectedClasses
             )}
             onMouseEnter={() => handleEquipmentHover('mouse')}
@@ -126,7 +126,7 @@ export default function Home() {
           <div
             className={cn(
               hoverAreaBaseClasses,
-              "top-[82%] left-[67%] w-[18%] h-[14%]", // Adjusted for new image
+              "top-[82%] left-[67%] w-[18%] h-[14%]", // Position relative to container
               selectedEquipment === 'mousepad' ? selectedClasses : unselectedClasses
             )}
             onMouseEnter={() => handleEquipmentHover('mousepad')}
@@ -137,7 +137,7 @@ export default function Home() {
           <div
             className={cn(
               hoverAreaBaseClasses,
-              "top-[66%] left-[30%] w-[40%] h-[7%]", // Adjusted for new image
+              "top-[66%] left-[30%] w-[40%] h-[7%]", // Position relative to container
               selectedEquipment === 'speakers' ? selectedClasses : unselectedClasses
             )}
             onMouseEnter={() => handleEquipmentHover('speakers')}
@@ -148,7 +148,7 @@ export default function Home() {
           <div
              className={cn(
               hoverAreaBaseClasses,
-              "top-[13%] left-[10%] w-[18%] h-[20%]", // Seems okay for new image
+              "top-[8%] left-[10%] w-[18%] h-[20%]", // Position relative to container
               selectedEquipment === 'calendar' ? selectedClasses : unselectedClasses
             )}
             onMouseEnter={() => handleEquipmentHover('calendar')}
@@ -159,7 +159,7 @@ export default function Home() {
           <div
              className={cn(
               hoverAreaBaseClasses,
-              "top-[10%] left-[35%] w-[55%] h-[25%]", // Seems okay for new image
+              "top-[10%] left-[35%] w-[55%] h-[25%]", // Position relative to container
               selectedEquipment === 'decoration' ? selectedClasses : unselectedClasses
             )}
             onMouseEnter={() => handleEquipmentHover('decoration')}
@@ -170,7 +170,7 @@ export default function Home() {
           <div
              className={cn(
               hoverAreaBaseClasses,
-              "top-[65%] left-[5%] w-[12%] h-[25%]", // Adjusted for new image
+              "top-[65%] left-[5%] w-[12%] h-[25%]", // Position relative to container
               selectedEquipment === 'headset' ? selectedClasses : unselectedClasses
             )}
             onMouseEnter={() => handleEquipmentHover('headset')}
