@@ -58,7 +58,7 @@ const equipmentData: Record<string, Equipment> = {
   },
   speakers: {
     name: 'Soundbar',
-    description: "This soundbar mostly serves an aesthetic purpose below the monitor. For work audio, I rely on the headset, and for music, the Google Home speaker usually takes center stage.",
+    description: 'A straightforward soundbar located beneath the monitor. It\'s simple, without high-end features, but gets the job done. For focused work, I use the headset, and the Google Home handles most music playback.',
     icon: Speaker,
   },
   wallArtLeft: {
