@@ -58,7 +58,7 @@ const equipmentData: Record<string, Equipment> = {
   },
   speakers: {
     name: 'Soundbar',
-    description: 'A straightforward soundbar located beneath the monitor. It\'s simple, without high-end features, but gets the job done. For focused work, I use the headset, and the Google Home handles most music playback.',
+    description: 'A straightforward soundbar located beneath the monitor. It\'s simple, without high-end features. I typically use it with my personal laptop, as I rely on the headset or Google Home speaker during work.',
     icon: Speaker,
   },
   wallArtLeft: {
@@ -404,4 +404,3 @@ export default function Home() {
     </div>
   );
 }
-
