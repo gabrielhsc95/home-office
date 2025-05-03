@@ -28,7 +28,6 @@ const equipmentData: Record<string, Equipment> = {
           <p>
             I prefer an ultrawide monitor over multiple monitors because the split-screen capability fits a lot onto the screen without requiring much neck movement. The HDR feature also makes it quite comfortable for the eyes. It&apos;s mounted on a boom arm.
           </p>
-          {/* Specs removed as requested */}
         </>
       ),
     icon: Monitor,
@@ -206,14 +205,15 @@ export default function Home() {
     <div className="flex min-h-screen flex-col bg-background text-foreground">
       <main className="flex flex-1 flex-col md:flex-row overflow-hidden">
         {/* Image Panel - Relative container for image and hover areas */}
-        <div className="w-full md:w-2/3 p-4 flex justify-center items-center">
+        {/* Increased width to md:w-3/4 */}
+        <div className="w-full md:w-3/4 p-4 flex justify-center items-center">
           {/* Aspect ratio container */}
           <div className="relative w-full aspect-[16/9] max-w-full max-h-full">
             <Image
               src="/images/home_office.jpg" // Use the local image file from the public folder
               alt="Home Office Setup"
               fill
-              sizes="(max-width: 768px) 100vw, 66vw" // Adjust sizes
+              sizes="(max-width: 768px) 100vw, 75vw" // Adjust sizes for new width
               className="rounded-lg object-contain" // Use object-contain to show full image
               priority // Load image immediately
               data-ai-hint="home office desk setup"
@@ -389,7 +389,8 @@ export default function Home() {
         </div>
 
         {/* Information Panel */}
-        <div className="w-full md:w-1/3 p-6 border-t md:border-t-0 md:border-l border-border overflow-y-auto flex-shrink-0">
+        {/* Decreased width to md:w-1/4 */}
+        <div className="w-full md:w-1/4 p-6 border-t md:border-t-0 md:border-l border-border overflow-y-auto flex-shrink-0">
           <h1 className="text-2xl font-bold mb-6">My Desk Setup</h1>
           {selectedEquipment ? (
             <div className="space-y-4">
