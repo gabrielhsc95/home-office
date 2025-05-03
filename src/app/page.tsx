@@ -85,6 +85,7 @@ const equipmentData: Record<string, Equipment> = {
     description: 'A USB hub located under the monitor for connecting devices.',
     icon: Usb,
   },
+  // 'deskDecoration' is covered by the 'lego' entry above.
 };
 
 // Define the type for selected equipment key
@@ -124,7 +125,7 @@ export default function Home() {
             <div
               className={cn(
                 hoverAreaBaseClasses,
-                "top-[35%] left-[15%] w-[70%] h-[30%]", // Position relative to container
+                "top-[45%] left-[30%] w-[35%] h-[25%]", // Position relative to container
                 selectedEquipment === 'monitor' ? selectedClasses : unselectedClasses
               )}
               onMouseEnter={() => handleEquipmentHover('monitor')}
@@ -135,7 +136,7 @@ export default function Home() {
             <div
               className={cn(
                 hoverAreaBaseClasses,
-                "top-[82%] left-[23%] w-[48%] h-[12%]", // Position relative to container
+                "top-[85%] left-[38%] w-[20%] h-[10%]", // Position relative to container
                 selectedEquipment === 'keyboard' ? selectedClasses : unselectedClasses
               )}
               onMouseEnter={() => handleEquipmentHover('keyboard')}
@@ -146,7 +147,7 @@ export default function Home() {
             <div
               className={cn(
                 hoverAreaBaseClasses,
-                "top-[83%] left-[72%] w-[10%] h-[10%] z-20", // Position relative to container, higher z-index
+                "top-[83%] left-[59%] w-[5%] h-[10%] z-20", // Position relative to container, higher z-index
                 selectedEquipment === 'mouse' ? selectedClasses : unselectedClasses
               )}
               onMouseEnter={() => handleEquipmentHover('mouse')}
@@ -157,7 +158,7 @@ export default function Home() {
             <div
               className={cn(
                 hoverAreaBaseClasses,
-                "top-[82%] left-[67%] w-[18%] h-[14%] z-10", // Position relative to container, lower z-index
+                "top-[82%] left-[57%] w-[12%] h-[13%] z-10", // Position relative to container, lower z-index
                 selectedEquipment === 'mousepad' ? selectedClasses : unselectedClasses
               )}
               onMouseEnter={() => handleEquipmentHover('mousepad')}
@@ -168,7 +169,7 @@ export default function Home() {
             <div
               className={cn(
                 hoverAreaBaseClasses,
-                "top-[66%] left-[30%] w-[40%] h-[7%]", // Position relative to container
+                "top-[72%] left-[39%] w-[17%] h-[6%]", // Position relative to container
                 selectedEquipment === 'speakers' ? selectedClasses : unselectedClasses
               )}
               onMouseEnter={() => handleEquipmentHover('speakers')}
@@ -179,7 +180,7 @@ export default function Home() {
             <div
                className={cn(
                 hoverAreaBaseClasses,
-                "top-[8%] left-[10%] w-[18%] h-[20%]", // Position relative to container
+                "top-[6%] left-[48%] w-[10%] h-[22%]", // Position relative to container
                 selectedEquipment === 'wallArtLeft' ? selectedClasses : unselectedClasses
               )}
               onMouseEnter={() => handleEquipmentHover('wallArtLeft')}
@@ -190,7 +191,7 @@ export default function Home() {
              <div
                className={cn(
                 hoverAreaBaseClasses,
-                "top-[5%] left-[55%] w-[25%] h-[20%]", // Position relative to container
+                "top-[3%] left-[61%] w-[17%] h-[39%]", // Position relative to container
                 selectedEquipment === 'wallArtRight' ? selectedClasses : unselectedClasses
               )}
               onMouseEnter={() => handleEquipmentHover('wallArtRight')}
@@ -201,7 +202,7 @@ export default function Home() {
             <div
                className={cn(
                 hoverAreaBaseClasses,
-                "top-[15%] left-[75%] w-[15%] h-[20%]", // Position relative to container
+                "top-[34%] left-[50%] w-[5%] h-[10%]", // Position relative to container
                 selectedEquipment === 'ringLight' ? selectedClasses : unselectedClasses
               )}
               onMouseEnter={() => handleEquipmentHover('ringLight')}
@@ -212,7 +213,7 @@ export default function Home() {
             <div
                className={cn(
                 hoverAreaBaseClasses,
-                "top-[30%] left-[45%] w-[10%] h-[8%]", // Position relative to container
+                "top-[40%] left-[45%] w-[6%] h-[5%]", // Position relative to container
                 selectedEquipment === 'webcam' ? selectedClasses : unselectedClasses
               )}
               onMouseEnter={() => handleEquipmentHover('webcam')}
@@ -223,18 +224,18 @@ export default function Home() {
              <div
                className={cn(
                 hoverAreaBaseClasses,
-                "top-[75%] left-[18%] w-[8%] h-[10%]", // Position relative to container
+                "top-[64%] left-[70%] w-[9%] h-[12%]", // Position relative to container
                 selectedEquipment === 'lego' ? selectedClasses : unselectedClasses
               )}
               onMouseEnter={() => handleEquipmentHover('lego')}
               onMouseLeave={() => setSelectedEquipment(null)}
-               aria-label="Select Lego Decoration area"
+               aria-label="Select Lego Decoration area" // This serves as the desk decoration
             />
             {/* Headset */}
             <div
                className={cn(
                 hoverAreaBaseClasses,
-                "top-[65%] left-[5%] w-[12%] h-[25%]", // Position relative to container
+                "top-[71%] left-[21%] w-[7%] h-[23%]", // Position relative to container
                 selectedEquipment === 'headset' ? selectedClasses : unselectedClasses
               )}
               onMouseEnter={() => handleEquipmentHover('headset')}
@@ -245,7 +246,7 @@ export default function Home() {
              <div
                className={cn(
                 hoverAreaBaseClasses,
-                "top-[78%] left-[73%] w-[10%] h-[7%]", // Adjust position for calendar
+                "top-[1%] left-[30%] w-[12%] h-[42%]", // Adjust position for calendar
                 selectedEquipment === 'calendar' ? selectedClasses : unselectedClasses
               )}
               onMouseEnter={() => handleEquipmentHover('calendar')}
@@ -256,7 +257,7 @@ export default function Home() {
              <div
                className={cn(
                 hoverAreaBaseClasses,
-                "top-[75%] left-[8%] w-[10%] h-[15%]", // Position for Google Home
+                "top-[70%] left-[30%] w-[5%] h-[5%]", // Position for Google Home
                 selectedEquipment === 'googleHome' ? selectedClasses : unselectedClasses
               )}
               onMouseEnter={() => handleEquipmentHover('googleHome')}
@@ -267,7 +268,7 @@ export default function Home() {
              <div
                className={cn(
                 hoverAreaBaseClasses,
-                "top-[75%] left-[55%] w-[10%] h-[5%]", // Position for USB Hub
+                "top-[78%] left-[58%] w-[5%] h-[5%]", // Position for USB Hub
                 selectedEquipment === 'usbHub' ? selectedClasses : unselectedClasses
               )}
               onMouseEnter={() => handleEquipmentHover('usbHub')}
