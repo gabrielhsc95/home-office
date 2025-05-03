@@ -11,12 +11,13 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import Link from 'next/link'; // Import Link for hyperlinks
 
 
 // Define a type for the equipment data structure
 interface Equipment {
   name: string;
-  description: string;
+  description: string | React.ReactNode; // Allow ReactNode for description
   icon: ComponentType<{ className?: string }>;
 }
 
@@ -48,8 +49,20 @@ const equipmentData: Record<string, Equipment> = {
     icon: Speaker,
   },
   wallArtLeft: {
-    name: 'Wall Art (Left)',
-    description: 'A poster hanging on the left wall.',
+    name: 'Giant Dragon', // Updated name
+    description: ( // Updated description with ReactNode
+      <>
+        This lighting painting is by Weishui Liu{' '}
+        <Link href="https://www.instagram.com/liuwishuipainting/" target="_blank" rel="noopener noreferrer" className="text-accent underline hover:text-accent/80">
+          (@liuwishuipainting)
+        </Link>.
+        I enjoy his Instagram content where he often humorously leads you to expect incredible detail, only to reveal a charming caricature.
+        <br /><br />
+        While this painting showcases his skill, it has a hidden funny element, playing on that expectation.
+        <br /><br />
+        <span className="italic text-muted-foreground/80">[Placeholder for a GIF showing the painting's humor]</span>
+      </>
+    ),
     icon: ImageIcon,
   },
   wallArtRight: {
@@ -78,21 +91,32 @@ const equipmentData: Record<string, Equipment> = {
     icon: Headphones,
   },
   calendar: {
-    name: '12,025 Human Era Calendar',
-    description: "The 12,025 Human Era Calendar by Kurzgesagt – In a Nutshell (find them at youtube.com/@kurzgesagt). This calendar honors humanity's collective story by adding 10,000 years to the current date, inspiring reflection on our ancestors' achievements. The 2025 edition celebrates the great journey of humankind out of Africa, unfolding an epic new story each month as you track your own adventures.",
+    name: '12,025 Human Era Calendar', // Updated name
+    description: ( // Updated description using ReactNode
+      <>
+        The 12,025 Human Era Calendar by{' '}
+        <Link href="https://www.youtube.com/@kurzgesagt" target="_blank" rel="noopener noreferrer" className="text-accent underline hover:text-accent/80">
+          Kurzgesagt – In a Nutshell
+        </Link>.
+        <br /><br />
+        This calendar honors humanity's collective story by adding 10,000 years to the current date, inspiring reflection on our ancestors' achievements and delving into our fascinating history.
+        <br /><br />
+        The 2025 edition celebrates the great journey of humankind out of Africa, unfolding an epic new story each month as you track your own adventures.
+      </>
+    ),
     icon: Calendar,
   },
-  googleHome: { // Added Google Home
+  googleHome: {
     name: 'Google Home Speaker',
     description: 'A smart speaker on the left side of the desk.',
     icon: Radio,
   },
-  usbHub: { // Added USB Hub
+  usbHub: {
     name: 'USB Hub',
     description: 'A USB hub located under the monitor for connecting devices.',
     icon: Usb,
   },
-  paperWeight: { // Added Paper Weight
+  paperWeight: {
     name: 'Paper Weight',
     description: 'A decorative paper weight on the desk.',
     icon: Anchor, // Using Anchor as a placeholder icon
@@ -310,9 +334,16 @@ export default function Home() {
                 {React.createElement(equipmentData[selectedEquipment].icon, { className: "h-6 w-6 text-accent flex-shrink-0" })}
                 <h2 className="text-xl font-semibold">{equipmentData[selectedEquipment].name}</h2>
               </div>
-              <p className="text-sm text-muted-foreground whitespace-pre-wrap"> {/* Added whitespace-pre-wrap */}
-                {equipmentData[selectedEquipment].description}
-              </p>
+              {/* Check if description is string or ReactNode */}
+              {typeof equipmentData[selectedEquipment].description === 'string' ? (
+                <p className="text-sm text-muted-foreground whitespace-pre-wrap">
+                  {equipmentData[selectedEquipment].description}
+                </p>
+              ) : (
+                <div className="text-sm text-muted-foreground space-y-2"> {/* Added space-y-2 for better spacing with ReactNode */}
+                  {equipmentData[selectedEquipment].description}
+                </div>
+              )}
             </div>
           ) : (
             <div className="flex flex-col items-center justify-center text-center min-h-[150px] md:min-h-0"> {/* Removed h-full */}
