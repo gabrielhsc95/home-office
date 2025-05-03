@@ -3,7 +3,7 @@
 
 import Image from 'next/image';
 import React, { useState, type ComponentType } from 'react';
-import { Monitor, Keyboard, Mouse, Speaker, Calendar, Headphones, Lightbulb, Image as ImageIcon, Camera, ToyBrick } from 'lucide-react';
+import { Monitor, Keyboard, Mouse, Speaker, Calendar, Headphones, Lightbulb, Image as ImageIcon, Camera, ToyBrick, Radio, Usb } from 'lucide-react'; // Added Radio, Usb
 import { cn } from "@/lib/utils"; // Import the cn utility
 
 // Define a type for the equipment data structure
@@ -70,10 +70,20 @@ const equipmentData: Record<string, Equipment> = {
     description: 'A headset hanging on the left side of the desk.',
     icon: Headphones,
   },
-  calendar: { // Added Calendar back
+  calendar: {
     name: 'Desk Calendar',
     description: 'A small desk calendar next to the keyboard.',
     icon: Calendar,
+  },
+  googleHome: { // Added Google Home
+    name: 'Google Home Speaker',
+    description: 'A smart speaker on the left side of the desk.',
+    icon: Radio,
+  },
+  usbHub: { // Added USB Hub
+    name: 'USB Hub',
+    description: 'A USB hub located under the monitor for connecting devices.',
+    icon: Usb,
   },
 };
 
@@ -242,6 +252,28 @@ export default function Home() {
               onMouseLeave={() => setSelectedEquipment(null)}
                aria-label="Select Calendar area"
             />
+            {/* Google Home Speaker */}
+             <div
+               className={cn(
+                hoverAreaBaseClasses,
+                "top-[75%] left-[8%] w-[10%] h-[15%]", // Position for Google Home
+                selectedEquipment === 'googleHome' ? selectedClasses : unselectedClasses
+              )}
+              onMouseEnter={() => handleEquipmentHover('googleHome')}
+              onMouseLeave={() => setSelectedEquipment(null)}
+               aria-label="Select Google Home area"
+            />
+            {/* USB Hub */}
+             <div
+               className={cn(
+                hoverAreaBaseClasses,
+                "top-[75%] left-[55%] w-[10%] h-[5%]", // Position for USB Hub
+                selectedEquipment === 'usbHub' ? selectedClasses : unselectedClasses
+              )}
+              onMouseEnter={() => handleEquipmentHover('usbHub')}
+              onMouseLeave={() => setSelectedEquipment(null)}
+               aria-label="Select USB Hub area"
+            />
           </div>
         </div>
 
@@ -278,3 +310,4 @@ export default function Home() {
     </div>
   );
 }
+
