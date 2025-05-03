@@ -58,7 +58,7 @@ const equipmentData: Record<string, Equipment> = {
         <div className="relative aspect-video w-full max-w-xs mx-auto my-2 rounded overflow-hidden shadow-md">
             <Image
                 src="https://picsum.photos/300/169" // Placeholder image
-                alt="Placeholder for GIF showing painting's humor"
+                alt="Painting caricature humor example"
                 fill
                 className="object-cover"
                 data-ai-hint="funny caricature art"
@@ -82,7 +82,7 @@ const equipmentData: Record<string, Equipment> = {
   },
   ringLight: {
     name: 'Ring Light',
-    description: 'A ring light providing illumination from the right.',
+    description: "A simple ring light purchased from Amazon, primarily to avoid looking like I'm participating in meetings from a cave.",
     icon: Lightbulb,
   },
   webcam: {
@@ -381,4 +381,3 @@ export default function Home() {
     </div>
   );
 }
-
