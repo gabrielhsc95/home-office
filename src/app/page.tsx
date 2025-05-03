@@ -71,116 +71,117 @@ export default function Home() {
   const selectedClasses = "ring-2 ring-teal-500 ring-offset-2 shadow-[0_0_15px_5px_rgba(0,128,128,0.5)]"; // Stronger teal glow when selected
   const unselectedClasses = "shadow-[0_0_8px_2px_rgba(0,128,128,0.4)]"; // Slightly more visible glow
 
-
   return (
-    <div className="flex h-screen flex-col bg-background text-foreground">
-      <main className="flex flex-1 overflow-hidden">
+    <div className="flex min-h-screen flex-col bg-background text-foreground">
+      <main className="flex flex-1 flex-col md:flex-row overflow-hidden">
         {/* Image Panel - Relative container for image and hover areas */}
-        {/* The image uses object-cover to fill this container */}
-        <div className="relative w-2/3 p-4">
-          <Image
-            src="/images/home_office.jpg" // Use the local image file from the public folder
-            alt="Home Office Setup"
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 66vw"
-            className="rounded-lg object-cover" // Use object-cover to fill container
-            priority // Load image immediately
-            data-ai-hint="home office desk setup"
-          />
+        <div className="w-full md:w-2/3 p-4 flex justify-center items-center">
+          {/* Aspect ratio container */}
+          <div className="relative w-full aspect-[16/9] max-w-full max-h-full">
+            <Image
+              src="/images/home_office.jpg" // Use the local image file from the public folder
+              alt="Home Office Setup"
+              fill
+              sizes="(max-width: 768px) 100vw, 66vw" // Adjust sizes
+              className="rounded-lg object-contain" // Use object-contain to show full image
+              priority // Load image immediately
+              data-ai-hint="home office desk setup"
+            />
 
-          {/* Hover areas - positions and sizes are percentages relative to the container above */}
-          {/* Monitor */}
-          <div
-            className={cn(
-              hoverAreaBaseClasses,
-              "top-[35%] left-[15%] w-[70%] h-[30%]", // Position relative to container
-              selectedEquipment === 'monitor' ? selectedClasses : unselectedClasses
-            )}
-            onMouseEnter={() => handleEquipmentHover('monitor')}
-            onMouseLeave={() => setSelectedEquipment(null)}
-            aria-label="Select Monitor area"
-          />
-           {/* Keyboard */}
-          <div
-            className={cn(
-              hoverAreaBaseClasses,
-              "top-[82%] left-[23%] w-[48%] h-[12%]", // Position relative to container
-              selectedEquipment === 'keyboard' ? selectedClasses : unselectedClasses
-            )}
-            onMouseEnter={() => handleEquipmentHover('keyboard')}
-            onMouseLeave={() => setSelectedEquipment(null)}
-             aria-label="Select Keyboard area"
-          />
-          {/* Mouse */}
-          <div
-            className={cn(
-              hoverAreaBaseClasses,
-              "top-[83%] left-[72%] w-[10%] h-[10%]", // Position relative to container
-              selectedEquipment === 'mouse' ? selectedClasses : unselectedClasses
-            )}
-            onMouseEnter={() => handleEquipmentHover('mouse')}
-            onMouseLeave={() => setSelectedEquipment(null)}
-             aria-label="Select Mouse area"
-          />
-          {/* Mousepad */}
-          <div
-            className={cn(
-              hoverAreaBaseClasses,
-              "top-[82%] left-[67%] w-[18%] h-[14%]", // Position relative to container
-              selectedEquipment === 'mousepad' ? selectedClasses : unselectedClasses
-            )}
-            onMouseEnter={() => handleEquipmentHover('mousepad')}
-            onMouseLeave={() => setSelectedEquipment(null)}
-             aria-label="Select Mousepad area"
-          />
-          {/* Speakers (Soundbar) */}
-          <div
-            className={cn(
-              hoverAreaBaseClasses,
-              "top-[66%] left-[30%] w-[40%] h-[7%]", // Position relative to container
-              selectedEquipment === 'speakers' ? selectedClasses : unselectedClasses
-            )}
-            onMouseEnter={() => handleEquipmentHover('speakers')}
-            onMouseLeave={() => setSelectedEquipment(null)}
-             aria-label="Select Soundbar area"
-          />
-          {/* Calendar */}
-          <div
-             className={cn(
-              hoverAreaBaseClasses,
-              "top-[8%] left-[10%] w-[18%] h-[20%]", // Position relative to container
-              selectedEquipment === 'calendar' ? selectedClasses : unselectedClasses
-            )}
-            onMouseEnter={() => handleEquipmentHover('calendar')}
-            onMouseLeave={() => setSelectedEquipment(null)}
-             aria-label="Select Calendar area"
-          />
-          {/* Decoration (Wall Art & Light) */}
-          <div
-             className={cn(
-              hoverAreaBaseClasses,
-              "top-[10%] left-[35%] w-[55%] h-[25%]", // Position relative to container
-              selectedEquipment === 'decoration' ? selectedClasses : unselectedClasses
-            )}
-            onMouseEnter={() => handleEquipmentHover('decoration')}
-            onMouseLeave={() => setSelectedEquipment(null)}
-             aria-label="Select Wall Decoration area"
-          />
-          {/* Headset */}
-          <div
-             className={cn(
-              hoverAreaBaseClasses,
-              "top-[65%] left-[5%] w-[12%] h-[25%]", // Position relative to container
-              selectedEquipment === 'headset' ? selectedClasses : unselectedClasses
-            )}
-            onMouseEnter={() => handleEquipmentHover('headset')}
-            onMouseLeave={() => setSelectedEquipment(null)}
-             aria-label="Select Headset area"
-          />
+            {/* Hover areas - positions and sizes are percentages relative to the container above */}
+             {/* Monitor */}
+            <div
+              className={cn(
+                hoverAreaBaseClasses,
+                "top-[35%] left-[15%] w-[70%] h-[30%]", // Position relative to container
+                selectedEquipment === 'monitor' ? selectedClasses : unselectedClasses
+              )}
+              onMouseEnter={() => handleEquipmentHover('monitor')}
+              onMouseLeave={() => setSelectedEquipment(null)}
+              aria-label="Select Monitor area"
+            />
+             {/* Keyboard */}
+            <div
+              className={cn(
+                hoverAreaBaseClasses,
+                "top-[82%] left-[23%] w-[48%] h-[12%]", // Position relative to container
+                selectedEquipment === 'keyboard' ? selectedClasses : unselectedClasses
+              )}
+              onMouseEnter={() => handleEquipmentHover('keyboard')}
+              onMouseLeave={() => setSelectedEquipment(null)}
+               aria-label="Select Keyboard area"
+            />
+            {/* Mouse */}
+            <div
+              className={cn(
+                hoverAreaBaseClasses,
+                "top-[83%] left-[72%] w-[10%] h-[10%]", // Position relative to container
+                selectedEquipment === 'mouse' ? selectedClasses : unselectedClasses
+              )}
+              onMouseEnter={() => handleEquipmentHover('mouse')}
+              onMouseLeave={() => setSelectedEquipment(null)}
+               aria-label="Select Mouse area"
+            />
+            {/* Mousepad */}
+            <div
+              className={cn(
+                hoverAreaBaseClasses,
+                "top-[82%] left-[67%] w-[18%] h-[14%]", // Position relative to container
+                selectedEquipment === 'mousepad' ? selectedClasses : unselectedClasses
+              )}
+              onMouseEnter={() => handleEquipmentHover('mousepad')}
+              onMouseLeave={() => setSelectedEquipment(null)}
+               aria-label="Select Mousepad area"
+            />
+            {/* Speakers (Soundbar) */}
+            <div
+              className={cn(
+                hoverAreaBaseClasses,
+                "top-[66%] left-[30%] w-[40%] h-[7%]", // Position relative to container
+                selectedEquipment === 'speakers' ? selectedClasses : unselectedClasses
+              )}
+              onMouseEnter={() => handleEquipmentHover('speakers')}
+              onMouseLeave={() => setSelectedEquipment(null)}
+               aria-label="Select Soundbar area"
+            />
+            {/* Calendar */}
+            <div
+               className={cn(
+                hoverAreaBaseClasses,
+                "top-[8%] left-[10%] w-[18%] h-[20%]", // Position relative to container
+                selectedEquipment === 'calendar' ? selectedClasses : unselectedClasses
+              )}
+              onMouseEnter={() => handleEquipmentHover('calendar')}
+              onMouseLeave={() => setSelectedEquipment(null)}
+               aria-label="Select Calendar area"
+            />
+            {/* Decoration (Wall Art & Light) */}
+            <div
+               className={cn(
+                hoverAreaBaseClasses,
+                "top-[10%] left-[35%] w-[55%] h-[25%]", // Position relative to container
+                selectedEquipment === 'decoration' ? selectedClasses : unselectedClasses
+              )}
+              onMouseEnter={() => handleEquipmentHover('decoration')}
+              onMouseLeave={() => setSelectedEquipment(null)}
+               aria-label="Select Wall Decoration area"
+            />
+            {/* Headset */}
+            <div
+               className={cn(
+                hoverAreaBaseClasses,
+                "top-[65%] left-[5%] w-[12%] h-[25%]", // Position relative to container
+                selectedEquipment === 'headset' ? selectedClasses : unselectedClasses
+              )}
+              onMouseEnter={() => handleEquipmentHover('headset')}
+              onMouseLeave={() => setSelectedEquipment(null)}
+               aria-label="Select Headset area"
+            />
+          </div>
         </div>
 
         {/* Information Panel */}
-        <div className="w-1/3 p-6 border-l border-border overflow-y-auto">
+        <div className="w-full md:w-1/3 p-6 border-t md:border-t-0 md:border-l border-border overflow-y-auto flex-shrink-0">
           <h1 className="text-2xl font-bold mb-6">My Desk Setup</h1>
           {selectedEquipment ? (
             <div className="space-y-4">
@@ -193,7 +194,7 @@ export default function Home() {
               </p>
             </div>
           ) : (
-            <div className="flex flex-col items-center justify-center h-full text-center">
+            <div className="flex flex-col items-center justify-center h-full text-center min-h-[150px] md:min-h-0">
                <Mouse className="h-12 w-12 text-muted-foreground mb-4" />
               <p className="text-lg font-medium text-muted-foreground">
                 Hover over an item!
