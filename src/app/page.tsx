@@ -42,7 +42,7 @@ const equipmentData: Record<string, Equipment> = {
           </p>
           <ul className="list-disc list-inside space-y-1 text-xs text-muted-foreground/90 mt-2">
             <li>The Milky Way Galaxy (31212)</li>
-            <li>Over the Moon with Pharrell Williams (10391?)</li>
+            <li>Over the Moon with Pharrell Williams (10391)</li>
             <li>The DeLorean Time Machine Building Set (21103)</li>
           </ul>
         </>
@@ -438,8 +438,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
-    
-    
-    
