@@ -4,6 +4,7 @@
 import Image from 'next/image';
 import React, { useState, type ComponentType } from 'react';
 import { Monitor, Keyboard, Mouse, Speaker, Calendar, Headphones, Lightbulb } from 'lucide-react';
+import { cn } from "@/lib/utils"; // Import the cn utility
 
 // Define a type for the equipment data structure
 interface Equipment {
@@ -67,9 +68,10 @@ export default function Home() {
   };
 
   // Common class string for hover areas
-  const hoverAreaBaseClasses = "absolute cursor-pointer rounded-md ring-1 ring-teal-500/30 hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 hover:shadow-[0_0_15px_5px_rgba(59,130,246,0.5)] transition-all duration-200";
-  const selectedClasses = "ring-2 ring-teal-500 ring-offset-2 shadow-[0_0_15px_5px_rgba(59,130,246,0.5)]";
-  const unselectedClasses = "shadow-[0_0_8px_2px_rgba(59,130,246,0.3)]"; // Increased faint glow visibility
+  const hoverAreaBaseClasses = "absolute cursor-pointer rounded-md ring-1 ring-teal-500/30 hover:ring-2 hover:ring-teal-500 hover:ring-offset-2 hover:shadow-[0_0_15px_5px_rgba(0,128,128,0.5)] transition-all duration-200"; // Teal glow on hover
+  const selectedClasses = "ring-2 ring-teal-500 ring-offset-2 shadow-[0_0_15px_5px_rgba(0,128,128,0.5)]"; // Stronger teal glow when selected
+  const unselectedClasses = "shadow-[0_0_8px_2px_rgba(0,128,128,0.3)]"; // Faint teal glow when not selected
+
 
   return (
     <div className="flex h-screen flex-col bg-background text-foreground">
@@ -77,12 +79,12 @@ export default function Home() {
         {/* Image Panel */}
         <div className="relative w-2/3 p-4">
           <Image
-            src="https://i.ibb.co/zV6dYNg/home-office.jpg" // Updated image source
+            src="https://i.ibb.co/zV6dYNg/home-office.jpg" // Using the IBB link
             alt="Home Office Setup"
             fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 66vw" // Provide sizes for responsive loading
-            className="rounded-lg object-contain" // Use object-contain to show the whole image
-            priority // Prioritize loading this image as it's LCP
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 66vw"
+            className="rounded-lg object-contain"
+            priority
             data-ai-hint="home office desk setup"
           />
 
@@ -209,3 +211,4 @@ export default function Home() {
     </div>
   );
 }
+
