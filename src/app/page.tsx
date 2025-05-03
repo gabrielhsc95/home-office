@@ -78,8 +78,8 @@ const equipmentData: Record<string, Equipment> = {
     icon: Headphones,
   },
   calendar: {
-    name: 'Desk Calendar',
-    description: 'A small desk calendar next to the keyboard.',
+    name: '12,025 Human Era Calendar',
+    description: "The 12,025 Human Era Calendar by Kurzgesagt – In a Nutshell (find them at youtube.com/@kurzgesagt). This calendar honors humanity's collective story by adding 10,000 years to the current date, inspiring reflection on our ancestors' achievements. The 2025 edition celebrates the great journey of humankind out of Africa, unfolding an epic new story each month as you track your own adventures.",
     icon: Calendar,
   },
   googleHome: { // Added Google Home
@@ -310,7 +310,7 @@ export default function Home() {
                 {React.createElement(equipmentData[selectedEquipment].icon, { className: "h-6 w-6 text-accent flex-shrink-0" })}
                 <h2 className="text-xl font-semibold">{equipmentData[selectedEquipment].name}</h2>
               </div>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-muted-foreground whitespace-pre-wrap"> {/* Added whitespace-pre-wrap */}
                 {equipmentData[selectedEquipment].description}
               </p>
             </div>
