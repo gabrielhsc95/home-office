@@ -73,7 +73,7 @@ export default function Home() {
           {/* Image Panel */}
           <div className="relative w-2/3 p-4">
             <Image
-              src="https://firebasestudio.ai/api/files/fbstudio-users/projects/clxhj18y100011v950c3r72k1/clxikw4p0002k77l56i8b7l6w"
+              src="/home_office.jpg" // Use the local image file
               alt="Home Office Setup"
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 66vw" // Provide sizes for responsive loading
@@ -206,3 +206,5 @@ export default function Home() {
     </>
   );
 }
+
+    
