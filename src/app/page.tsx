@@ -81,12 +81,12 @@ const equipmentData: Record<string, Equipment> = {
         <br /><br />
         While this painting showcases his skill, it is hidden behind a funny element, playing on that expectation.
         <br /><br />
-        <div className="relative aspect-video w-full max-w-xs mx-auto my-2 rounded overflow-hidden shadow-md">
+        <div className="relative aspect-square w-full max-w-xs mx-auto my-2 rounded overflow-hidden shadow-md">
             <Image
                 src="/images/giant_dragons.gif"
                 alt="Painting caricature humor example"
                 fill
-                className="object-contain" // Changed from object-cover to object-contain
+                className="object-contain" // Keep object-contain
                 data-ai-hint="funny caricature art"
              />
         </div>
@@ -206,7 +206,7 @@ export default function Home() {
       <main className="flex flex-1 flex-col md:flex-row overflow-hidden">
         {/* Image Panel - Relative container for image and hover areas */}
         {/* Increased width to md:w-3/4 */}
-        <div className="w-full md:w-3/4 p-4 flex justify-center items-center">
+        <div className="w-full md:w-full p-4 flex justify-center items-center">
           {/* Aspect ratio container */}
           <div className="relative w-full aspect-[16/9] max-w-full max-h-full">
             <Image
@@ -439,5 +439,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
