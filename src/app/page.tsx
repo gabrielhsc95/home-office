@@ -328,7 +328,7 @@ export default function Home() {
               Vibe coded using Google Firebase Studio
             </TooltipTrigger>
             <TooltipContent>
-              <p>(Image and positions of the box were done "manually")</p>
+              <p>Image and positions of the box were done "manually"</p>
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>
@@ -336,4 +336,3 @@ export default function Home() {
     </div>
   );
 }
-
