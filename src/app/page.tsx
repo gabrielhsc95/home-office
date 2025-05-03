@@ -5,6 +5,7 @@ import Image from 'next/image';
 import React, { useState, type ComponentType } from 'react';
 import { Monitor, Keyboard, Mouse, Speaker, Calendar, Headphones, Lightbulb, Image as ImageIcon, Camera, ToyBrick, Radio, Usb, Anchor } from 'lucide-react';
 import { cn } from "@/lib/utils";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"; // Import Tooltip components
 
 // Define a type for the equipment data structure
 interface Equipment {
@@ -283,7 +284,7 @@ export default function Home() {
              <div
                className={cn(
                 hoverAreaBaseClasses,
-                "top-[70%] left-[35%] w-[4%] h-[7%]", // Position for Paper Weight (left of soundbar)
+                "top-[73%] left-[36%] w-[4%] h-[7%]", // Position for Paper Weight (left of soundbar)
                 selectedEquipment === 'paperWeight' ? selectedClasses : unselectedClasses
               )}
               onMouseEnter={() => handleEquipmentHover('paperWeight')}
@@ -321,8 +322,18 @@ export default function Home() {
         </div>
       </main>
       <footer className="p-4 text-center text-xs text-muted-foreground border-t border-border">
-        Vibe coded using Google Firebase Studio
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger>
+              Vibe coded using Google Firebase Studio
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>(Image and positions of the box were done "manually")</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
       </footer>
     </div>
   );
 }
+
