@@ -47,7 +47,7 @@ const equipmentData: Record<string, Equipment> = {
     icon: Speaker,
   },
   wallArtLeft: {
-    name: 'Giant Dragon', // Updated name
+    name: 'Giant Dragon',
     description: ( // Updated description with ReactNode
       <>
         This lighting painting is by Weishui Liu (<span className="font-semibold">@liuwishuipainting</span>).
@@ -69,7 +69,7 @@ const equipmentData: Record<string, Equipment> = {
     icon: ImageIcon,
   },
   wallArtRight: {
-    name: 'Back to Earth Poster', // Updated name
+    name: 'Back to Earth Poster',
     description: ( // Updated description with ReactNode
       <>
         This poster is by <span className="font-semibold">Kurzgesagt – In a Nutshell</span>.
@@ -87,7 +87,7 @@ const equipmentData: Record<string, Equipment> = {
   },
   webcam: {
     name: 'Webcam',
-    description: 'A webcam positioned on top of the monitor.',
+    description: 'MSCI gave me this one. Honestly, Earl could probably give you better specs than I can.',
     icon: Camera,
   },
   lego: {
@@ -101,7 +101,7 @@ const equipmentData: Record<string, Equipment> = {
     icon: Headphones,
   },
   calendar: {
-    name: '12,025 Human Era Calendar', // Updated name
+    name: '12,025 Human Era Calendar',
     description: ( // Updated description using ReactNode
       <>
         The 12,025 Human Era Calendar by <span className="font-semibold">Kurzgesagt – In a Nutshell</span>.
@@ -381,3 +381,4 @@ export default function Home() {
     </div>
   );
 }
+
