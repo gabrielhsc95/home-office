@@ -48,10 +48,9 @@ const equipmentData: Record<string, Equipment> = {
   },
   wallArtLeft: {
     name: 'Giant Dragon', // Updated name
-    description: ( // Updated description with ReactNode, removed Link
+    description: ( // Updated description with ReactNode
       <>
-        This lighting painting is by Weishui Liu{' '}
-        (<span className="font-semibold">@liuwishuipainting</span>).
+        This lighting painting is by Weishui Liu (<span className="font-semibold">@liuwishuipainting</span>).
         I enjoy his Instagram content where he often humorously leads you to expect incredible detail, only to reveal a charming caricature.
         <br /><br />
         While this painting showcases his skill, it is hidden behind a funny element, playing on that expectation.
@@ -70,8 +69,15 @@ const equipmentData: Record<string, Equipment> = {
     icon: ImageIcon,
   },
   wallArtRight: {
-    name: 'Wall Art (Right)',
-    description: 'A framed poster on the right wall.',
+    name: 'Back to Earth Poster', // Updated name
+    description: ( // Updated description with ReactNode
+      <>
+        This poster is by <span className="font-semibold">Kurzgesagt – In a Nutshell</span>.
+        I&apos;m a big fan of their channel; they were one of the key inspirations behind my decision to major in Physics.
+        <br /><br />
+        I own several other posters from them that decorate various spots around my house, along with other merchandise like clothing.
+      </>
+    ),
     icon: ImageIcon,
   },
   ringLight: {
@@ -96,12 +102,11 @@ const equipmentData: Record<string, Equipment> = {
   },
   calendar: {
     name: '12,025 Human Era Calendar', // Updated name
-    description: ( // Updated description using ReactNode, removed Link
+    description: ( // Updated description using ReactNode
       <>
-        The 12,025 Human Era Calendar by{' '}
-        <span className="font-semibold">Kurzgesagt – In a Nutshell</span>.
+        The 12,025 Human Era Calendar by <span className="font-semibold">Kurzgesagt – In a Nutshell</span>.
         <br /><br />
-        This calendar honors humanity's collective story by adding 10,000 years to the current date, inspiring reflection on our ancestors' achievements and delving into our fascinating history.
+        This calendar honors humanity&apos;s collective story by adding 10,000 years to the current date, inspiring reflection on our ancestors&apos; achievements and delving into our fascinating history.
         <br /><br />
         The 2025 edition celebrates the great journey of humankind out of Africa, unfolding an epic new story each month as you track your own adventures.
       </>
@@ -376,5 +381,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
