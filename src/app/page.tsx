@@ -28,15 +28,7 @@ const equipmentData: Record<string, Equipment> = {
           <p>
             I prefer an ultrawide monitor over multiple monitors because the split-screen capability fits a lot onto the screen without requiring much neck movement. The HDR feature also makes it quite comfortable for the eyes. It&apos;s mounted on a boom arm.
           </p>
-          <h3 className="font-semibold mt-3 mb-1">Specs:</h3>
-          <ul className="list-disc list-inside space-y-1 text-xs text-muted-foreground/90">
-            <li><strong>Screen Size:</strong> 34 Inches</li>
-            <li><strong>Screen Resolution:</strong> 3440x1440</li>
-            <li><strong>Panel Type:</strong> IPS with HDR 10 Compatibility</li>
-            <li><strong>Aspect Ratio:</strong> 21:9</li>
-            <li><strong>Refresh Rate:</strong> 60Hz</li>
-            <li><strong>Color Gamut:</strong> sRGB 99%</li>
-          </ul>
+          {/* Specs removed as requested */}
         </>
       ),
     icon: Monitor,
@@ -107,7 +99,7 @@ const equipmentData: Record<string, Equipment> = {
     name: 'Back to Earth Poster',
     description: (
       <>
-        This poster is by <span className="font-semibold">Kurzgesagt – In a Nutshell</span>.
+        This poster is by <strong>Kurzgesagt – In a Nutshell</strong>.
         I&apos;m a big fan of their channel; they were one of the key inspirations behind my decision to major in Physics.
         <br /><br />
         I own several other posters from them that decorate various spots around my house, along with other merchandise like clothing.
@@ -149,7 +141,7 @@ const equipmentData: Record<string, Equipment> = {
     description: (
         <>
          <p>
-           The 12,025 Human Era Calendar by <span className="font-semibold">Kurzgesagt – In a Nutshell</span>.
+           The 12,025 Human Era Calendar by <strong>Kurzgesagt – In a Nutshell</strong>.
          </p>
          <p className="mt-2">
            This calendar honors humanity&apos;s collective story by adding 10,000 years to the current date, inspiring reflection on our ancestors&apos; achievements and delving into our fascinating history.
