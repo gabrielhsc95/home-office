@@ -13,7 +13,7 @@ export default function Header() {
         <div className="mr-4 flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <Avatar className="h-8 w-8">
-              <AvatarImage src="https://picsum.photos/40/40" alt="Gabuzando Avatar" data-ai-hint="person cartoon" />
+              <AvatarImage src="/images/avatar.png" alt="Gabuzando Avatar" data-ai-hint="person cartoon" />
               <AvatarFallback>G</AvatarFallback>
             </Avatar>
             <span className="font-bold sm:inline-block">
