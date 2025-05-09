@@ -17,6 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'Desk Setup Showcase', // Updated title
   description: 'An interactive showcase of a home office desk setup.', // Updated description
+  icons: {
+    icon: '/favicon.ico', // Standard path for favicon in the public directory
+  },
 };
 
 export default function RootLayout({
