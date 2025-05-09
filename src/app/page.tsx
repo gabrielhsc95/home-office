@@ -11,6 +11,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import Header from '@/components/layout/Header'; // Import the Header component
 
 // Define a type for the equipment data structure
 interface Equipment {
@@ -81,12 +82,12 @@ const equipmentData: Record<string, Equipment> = {
         <br /><br />
         While this painting showcases his skill, it is hidden behind a funny element, playing on that expectation.
         <br /><br />
-        <div className="relative aspect-square w-full max-w-xs mx-auto my-2 rounded overflow-hidden shadow-md">
+        <div className="relative aspect-video w-full max-w-xs mx-auto my-2 rounded overflow-hidden shadow-md">
             <Image
                 src="/images/giant_dragon.gif"
                 alt="Painting caricature humor example"
                 fill
-                className="object-contain" // Keep object-contain
+                className="object-contain"
                 data-ai-hint="funny caricature art"
              />
         </div>
@@ -203,19 +204,18 @@ export default function Home() {
 
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
-      <main className="flex flex-1 flex-col md:flex-row overflow-hidden">
-        {/* Image Panel - Relative container for image and hover areas */}
-        {/* Increased width to md:w-3/4 */}
+      <Header /> {/* Add the Header component here */}
+      <main className="flex flex-1 flex-col md:flex-row overflow-hidden pt-4"> {/* Added pt-4 for padding below header */}
+        {/* Image Panel */}
         <div className="w-full md:w-full p-4 flex justify-center items-center">
-          {/* Aspect ratio container */}
           <div className="relative w-full aspect-[16/9] max-w-full max-h-full">
             <Image
-              src="/images/home_office.jpg" // Use the local image file from the public folder
+              src="/images/home_office.jpg"
               alt="Home Office Setup"
               fill
-              sizes="(max-width: 768px) 100vw, 75vw" // Adjust sizes for new width
-              className="rounded-lg object-contain" // Use object-contain to show full image
-              priority // Load image immediately
+              sizes="(max-width: 768px) 100vw, 75vw"
+              className="rounded-lg object-contain"
+              priority
               data-ai-hint="home office desk setup"
             />
 
@@ -224,7 +224,7 @@ export default function Home() {
             <div
               className={cn(
                 hoverAreaBaseClasses,
-                "top-[45%] left-[30%] w-[35%] h-[25%]", // Position relative to container
+                "top-[45%] left-[30%] w-[35%] h-[25%]", 
                 selectedEquipment === 'monitor' ? selectedClasses : unselectedClasses
               )}
               onMouseEnter={() => handleEquipmentHover('monitor')}
@@ -235,7 +235,7 @@ export default function Home() {
             <div
               className={cn(
                 hoverAreaBaseClasses,
-                "top-[85%] left-[38%] w-[20%] h-[10%]", // Position relative to container
+                "top-[85%] left-[38%] w-[20%] h-[10%]", 
                 selectedEquipment === 'keyboard' ? selectedClasses : unselectedClasses
               )}
               onMouseEnter={() => handleEquipmentHover('keyboard')}
@@ -246,7 +246,7 @@ export default function Home() {
             <div
               className={cn(
                 hoverAreaBaseClasses,
-                "top-[83%] left-[59%] w-[5%] h-[10%] z-20", // Position relative to container, higher z-index
+                "top-[83%] left-[59%] w-[5%] h-[10%] z-20", 
                 selectedEquipment === 'mouse' ? selectedClasses : unselectedClasses
               )}
               onMouseEnter={() => handleEquipmentHover('mouse')}
@@ -257,7 +257,7 @@ export default function Home() {
             <div
               className={cn(
                 hoverAreaBaseClasses,
-                "top-[82%] left-[57%] w-[12%] h-[13%] z-10", // Position relative to container, lower z-index
+                "top-[82%] left-[57%] w-[12%] h-[13%] z-10", 
                 selectedEquipment === 'mousepad' ? selectedClasses : unselectedClasses
               )}
               onMouseEnter={() => handleEquipmentHover('mousepad')}
@@ -268,7 +268,7 @@ export default function Home() {
             <div
               className={cn(
                 hoverAreaBaseClasses,
-                "top-[72%] left-[39%] w-[17%] h-[6%]", // Position relative to container
+                "top-[72%] left-[39%] w-[17%] h-[6%]", 
                 selectedEquipment === 'speakers' ? selectedClasses : unselectedClasses
               )}
               onMouseEnter={() => handleEquipmentHover('speakers')}
@@ -279,7 +279,7 @@ export default function Home() {
             <div
                className={cn(
                 hoverAreaBaseClasses,
-                "top-[6%] left-[48%] w-[10%] h-[22%]", // Position relative to container
+                "top-[6%] left-[48%] w-[10%] h-[22%]", 
                 selectedEquipment === 'wallArtLeft' ? selectedClasses : unselectedClasses
               )}
               onMouseEnter={() => handleEquipmentHover('wallArtLeft')}
@@ -290,7 +290,7 @@ export default function Home() {
              <div
                className={cn(
                 hoverAreaBaseClasses,
-                "top-[3%] left-[61%] w-[17%] h-[39%]", // Position relative to container
+                "top-[3%] left-[61%] w-[17%] h-[39%]", 
                 selectedEquipment === 'wallArtRight' ? selectedClasses : unselectedClasses
               )}
               onMouseEnter={() => handleEquipmentHover('wallArtRight')}
@@ -301,7 +301,7 @@ export default function Home() {
             <div
                className={cn(
                 hoverAreaBaseClasses,
-                "top-[34%] left-[50%] w-[5%] h-[10%]", // Position relative to container
+                "top-[34%] left-[50%] w-[5%] h-[10%]", 
                 selectedEquipment === 'ringLight' ? selectedClasses : unselectedClasses
               )}
               onMouseEnter={() => handleEquipmentHover('ringLight')}
@@ -312,7 +312,7 @@ export default function Home() {
             <div
                className={cn(
                 hoverAreaBaseClasses,
-                "top-[40%] left-[45%] w-[6%] h-[5%]", // Position relative to container
+                "top-[40%] left-[45%] w-[6%] h-[5%]", 
                 selectedEquipment === 'webcam' ? selectedClasses : unselectedClasses
               )}
               onMouseEnter={() => handleEquipmentHover('webcam')}
@@ -323,7 +323,7 @@ export default function Home() {
              <div
                className={cn(
                 hoverAreaBaseClasses,
-                "top-[64%] left-[70%] w-[9%] h-[12%]", // Position relative to container
+                "top-[64%] left-[70%] w-[9%] h-[12%]", 
                 selectedEquipment === 'lego' ? selectedClasses : unselectedClasses
               )}
               onMouseEnter={() => handleEquipmentHover('lego')}
@@ -334,7 +334,7 @@ export default function Home() {
             <div
                className={cn(
                 hoverAreaBaseClasses,
-                "top-[71%] left-[21%] w-[7%] h-[23%]", // Position relative to container
+                "top-[71%] left-[21%] w-[7%] h-[23%]", 
                 selectedEquipment === 'headset' ? selectedClasses : unselectedClasses
               )}
               onMouseEnter={() => handleEquipmentHover('headset')}
@@ -345,7 +345,7 @@ export default function Home() {
              <div
                className={cn(
                 hoverAreaBaseClasses,
-                "top-[1%] left-[30%] w-[12%] h-[42%]", // Adjust position for calendar
+                "top-[1%] left-[30%] w-[12%] h-[42%]", 
                 selectedEquipment === 'calendar' ? selectedClasses : unselectedClasses
               )}
               onMouseEnter={() => handleEquipmentHover('calendar')}
@@ -356,7 +356,7 @@ export default function Home() {
              <div
                className={cn(
                 hoverAreaBaseClasses,
-                "top-[70%] left-[30%] w-[5%] h-[5%]", // Position for Google Home
+                "top-[70%] left-[30%] w-[5%] h-[5%]", 
                 selectedEquipment === 'googleHome' ? selectedClasses : unselectedClasses
               )}
               onMouseEnter={() => handleEquipmentHover('googleHome')}
@@ -367,7 +367,7 @@ export default function Home() {
              <div
                className={cn(
                 hoverAreaBaseClasses,
-                "top-[78%] left-[58%] w-[5%] h-[5%]", // Position for USB Hub
+                "top-[78%] left-[58%] w-[5%] h-[5%]", 
                 selectedEquipment === 'usbHub' ? selectedClasses : unselectedClasses
               )}
               onMouseEnter={() => handleEquipmentHover('usbHub')}
@@ -378,7 +378,7 @@ export default function Home() {
              <div
                className={cn(
                 hoverAreaBaseClasses,
-                "top-[73%] left-[36%] w-[4%] h-[7%]", // Position for Paper Weight (left of soundbar)
+                "top-[73%] left-[36%] w-[4%] h-[7%]", 
                 selectedEquipment === 'paperWeight' ? selectedClasses : unselectedClasses
               )}
               onMouseEnter={() => handleEquipmentHover('paperWeight')}
@@ -389,29 +389,26 @@ export default function Home() {
         </div>
 
         {/* Information Panel */}
-        {/* Decreased width to md:w-1/4 */}
         <div className="w-full md:w-1/4 p-6 border-t md:border-t-0 md:border-l border-border overflow-y-auto flex-shrink-0">
           <h1 className="text-2xl font-bold mb-6">My Desk Setup</h1>
           {selectedEquipment ? (
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                {/* Use React.createElement to dynamically render the icon */}
                 {React.createElement(equipmentData[selectedEquipment].icon, { className: "h-6 w-6 text-accent flex-shrink-0" })}
                 <h2 className="text-xl font-semibold">{equipmentData[selectedEquipment].name}</h2>
               </div>
-              {/* Check if description is string or ReactNode */}
               {typeof equipmentData[selectedEquipment].description === 'string' ? (
                 <p className="text-sm text-muted-foreground whitespace-pre-wrap">
                   {equipmentData[selectedEquipment].description}
                 </p>
               ) : (
-                <div className="text-sm text-muted-foreground space-y-2"> {/* Added space-y-2 for better spacing with ReactNode */}
+                <div className="text-sm text-muted-foreground space-y-2">
                   {equipmentData[selectedEquipment].description}
                 </div>
               )}
             </div>
           ) : (
-            <div className="flex flex-col items-center justify-center text-center min-h-[150px] md:min-h-0"> {/* Removed h-full */}
+            <div className="flex flex-col items-center justify-center text-center min-h-[150px] md:min-h-0">
                <Mouse className="h-12 w-12 text-muted-foreground mb-4" />
               <p className="text-lg font-medium text-muted-foreground">
                 Hover over an item!

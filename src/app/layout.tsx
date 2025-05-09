@@ -15,11 +15,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Desk Setup Showcase', // Updated title
-  description: 'An interactive showcase of a home office desk setup.', // Updated description
-  icons: {
-    icon: '/favicon.ico', // Standard path for favicon in the public directory
-  },
+  title: 'Gabuzando - Desk Setup Showcase', // Updated title to include Gabuzando
+  description: 'An interactive showcase of a home office desk setup.', 
+  // icons: { // Favicon generation is not supported by the AI, removing for now
+  //   icon: '/favicon.ico', 
+  // },
 };
 
 export default function RootLayout({
@@ -36,5 +36,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-    
